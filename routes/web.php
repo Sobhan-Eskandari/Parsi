@@ -18,13 +18,14 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/map', function (){
+/*Route::get('/home', 'HomeController@index')->name('home');*/
+Route::get('/map', function () {
     return view('testMap');
 });
 
-Route::post('/map', function (Request $request){
+Route::post('/map', function (Request $request) {
     dd($request->all());
+});
+Route::get('/homePage', function () {
+    return view('pages.homePage');
 });

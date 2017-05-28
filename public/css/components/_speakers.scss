@@ -1,0 +1,21 @@
+.speakerConf {
+  img {
+    border-radius: 100px;
+  }
+  .job {
+    color: $gray;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+}
+
+.tooltip > .tooltip-inner {
+  background-color: white;
+  color: #FFFFFF;
+  border: 1px solid white;
+  padding: 15px;
+  font-family: IRANSans;
+  color: black;
+  box-shadow: 0 0 2px gray;
+}

@@ -1,0 +1,335 @@
+/* ============[ Css Import ]=========== */
+h3 {
+  color: #B2B2B2; }
+
+body {
+  font-family: IRANSans !important; }
+
+h1, h2, h3, h4, h5, h6, input, textarea, button {
+  font-family: IRANSans !important; }
+
+header {
+  background-image: url("../../images/header.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%; }
+
+.mainConferencesNavbar .navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-weight: 500;
+  padding-right: 18px;
+  padding-left: 18px;
+  font-size: 16px; }
+.mainConferencesNavbar .navbar-light .navbar-nav .nav-link:hover {
+  color: #00E2FF; }
+@media only screen and (max-width: 1250px) {
+  .mainConferencesNavbar .navbar-light .navbar-nav .nav-link {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 14px; } }
+@media only screen and (max-width: 1000px) {
+  .mainConferencesNavbar .navbar-light .navbar-nav .nav-link {
+    padding-right: 6px;
+    padding-left: 6px;
+    text-align: center;
+    font-size: 15px; }
+  .mainConferencesNavbar .loginButton {
+    margin: 0 47%;
+    font-weight: 600; }
+  .mainConferencesNavbar .navbar-toggler, .mainConferencesNavbar .navbar-toggler:focus {
+    color: white;
+    border: 1px solid white;
+    background-color: white; } }
+.mainConferencesNavbar .navbar-brand, .mainConferencesNavbar .navbar-brand:hover, .mainConferencesNavbar .navbar-brand:focus {
+  font-size: 16px;
+  color: white; }
+.mainConferencesNavbar .loginButton, .mainConferencesNavbar .loginButton:focus, .mainConferencesNavbar .loginButton:hover {
+  border-radius: 9px;
+  background-color: #00E2FF;
+  border: 1px solid #00E2FF;
+  box-shadow: 0 0 2px transparent;
+  cursor: pointer; }
+
+.subjectConfH2, .subjectConfH1, .header_address {
+  color: white;
+  font-weight: 400; }
+
+.header_address {
+  line-height: normal; }
+
+.subjectConfH2 {
+  margin-top: 12%; }
+
+.subjectConfH1 {
+  word-spacing: 3px; }
+
+.counter_second {
+  color: #7FFF00; }
+
+.counter_min {
+  color: #DA00FF; }
+
+.counter_day, .counter_hour, .counter_min, .counter_second {
+  font-weight: 400; }
+
+.counter_hour {
+  color: cyan; }
+
+.counter_day {
+  color: #F6A623; }
+
+hr {
+  border-top: 2px solid white; }
+
+.hr-right {
+  margin-left: -40%;
+  width: 80%; }
+
+.hr-left {
+  margin-right: -40%;
+  width: 80%; }
+
+/* ============[ about conf ]=========== */
+.aboutConf h5 {
+  padding-bottom: 10px;
+  border-bottom: 2px solid black;
+  width: 17%; }
+.aboutConf p {
+  line-height: 30px;
+  font-weight: 500;
+  word-spacing: 2.5px; }
+.aboutConf .btn {
+  width: 125px;
+  text-align: center; }
+.aboutConf .btn-primary, .aboutConf .btn-primary:focus {
+  background-color: #46B594;
+  border: 1px solid #46B594;
+  box-shadow: 0 0 2px transparent;
+  cursor: pointer;
+  border-radius: 8px; }
+.aboutConf .btn-outline-success, .aboutConf .btn-outline-success:hover, .aboutConf .btn-outline-success:focus {
+  border: 1px solid #46B594;
+  color: #46B594;
+  box-shadow: 0 0 2px transparent;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 8px; }
+
+/* ============[ about conf(black) ]=========== */
+.blackBackAboutConf {
+  background-color: #232323;
+  z-index: -1; }
+  .blackBackAboutConf p {
+    line-height: 30px;
+    font-weight: 500;
+    color: white;
+    word-spacing: 2.5px;
+    padding-top: 7%; }
+  .blackBackAboutConf .btn {
+    width: 125px;
+    text-align: center;
+    cursor: pointer; }
+  .blackBackAboutConf .btn-primary, .blackBackAboutConf .btn-primary:focus {
+    background-color: #46B594;
+    border: 1px solid #46B594;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px; }
+  .blackBackAboutConf .btn-outline-success, .blackBackAboutConf .btn-outline-success:hover, .blackBackAboutConf .btn-outline-success:focus {
+    border: 1px solid #46B594;
+    color: white;
+    box-shadow: 0 0 2px transparent;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 8px; }
+
+/* ============[ mack book ]=========== */
+.mackBookImageBox {
+  margin-bottom: -9.5%;
+  z-index: 0; }
+
+/* ============[ present ]=========== */
+.presentBox hr {
+  border-top: 2px solid gray;
+  width: 29%;
+  text-align: center; }
+.presentBox p {
+  font-weight: 400; }
+.presentBox .thirdCupImg {
+  margin-left: -22%;
+  margin-top: 6%; }
+.presentBox .secondCupImg {
+  margin-right: -22%;
+  margin-top: 6%; }
+.presentBox .firstCumImgBox {
+  z-index: 0; }
+.presentBox .secondCupImgBox {
+  z-index: -1; }
+@media only screen and (max-width: 1000px) {
+  .presentBox .thirdCupImg {
+    margin-left: -13%; }
+  .presentBox .secondCupImg {
+    margin-right: -13%; } }
+
+/* ============[ creative experience ]=========== */
+.creativeExperience {
+  background-image: url("../../images/blueHand.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%; }
+
+.creativeExperience {
+  padding-top: 8%;
+  padding-bottom: 7%; }
+  .creativeExperience h4, .creativeExperience p {
+    color: white;
+    word-spacing: 3px; }
+  .creativeExperience .btn-primary, .creativeExperience .btn-primary:focus {
+    background-color: #46B594;
+    border: 1px solid #46B594;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 105px;
+    text-align: center;
+    margin-top: -2%; }
+
+/* ============[ speakers ]=========== */
+.speakerConf hr {
+  border-top: 2px solid gray;
+  text-align: center;
+  width: 13%; }
+
+.separate_hr {
+  border-top: 2px solid gray; }
+
+/* ============[ cadre ]=========== */
+.executiveCadre hr {
+  border-top: 2px solid gray;
+  text-align: center;
+  width: 9%; }
+
+/* ============[ latest news ]=========== */
+.latestNews {
+  background-image: url("../../images/mountain.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%; }
+
+.latestNews hr {
+  border-top: 3px solid white;
+  text-align: center;
+  width: 15%; }
+.latestNews h3 {
+  color: white;
+  font-weight: 400; }
+.latestNews .btn-primary, .latestNews .btn-primary:focus {
+  background-color: #4990E2;
+  border: 1px solid #4990E2;
+  box-shadow: 0 0 2px transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 125px;
+  text-align: center;
+  padding-top: 14px;
+  padding-bottom: 14px; }
+
+/* ============[ latest news ]=========== */
+.supportersBox hr {
+  border-top: 2px solid gray;
+  text-align: center;
+  width: 13%; }
+.supportersBox .lighter_hr {
+  border-top: 2px solid lightgray;
+  text-align: center;
+  width: 65%; }
+
+/* ============[ contact ]=========== */
+.contactWithUs {
+  background-color: #46B594; }
+  .contactWithUs h4 {
+    color: white; }
+  .contactWithUs hr {
+    border-top: 2px solid white;
+    text-align: center;
+    width: 10%; }
+  .contactWithUs input {
+    width: 100%; }
+  .contactWithUs input:focus, .contactWithUs textarea:focus {
+    border: 1px solid transparent; }
+  .contactWithUs input, .contactWithUs textarea {
+    border-radius: 8px; }
+  .contactWithUs input {
+    height: 50px; }
+  .contactWithUs textarea {
+    resize: none; }
+  .contactWithUs .btn-primary, .contactWithUs .btn-primary:focus {
+    background-color: white;
+    border: 1px solid #46B594;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    color: #46B594;
+    font-weight: 600;
+    padding-top: 13px;
+    padding-bottom: 13px; }
+
+/* ============[ contact ]=========== */
+#map {
+  height: 350px;
+  width: 100%; }
+
+/* ============[ footer ]=========== */
+.footer {
+  background-color: #323737; }
+  .footer h5 {
+    color: white; }
+  .footer .fa {
+    color: white; }
+  .footer .fa:hover {
+    color: #46B594; }
+
+.strip {
+  background-color: #222222; }
+  .strip h6 {
+    color: white;
+    font-weight: 400;
+    line-height: normal;
+    word-spacing: 2px; }
+
+.speakerConf img {
+  border-radius: 100px; }
+.speakerConf .job {
+  color: #B2B2B2;
+  font-weight: 400;
+  font-size: 18px; }
+
+.tooltip > .tooltip-inner {
+  background-color: white;
+  color: #FFFFFF;
+  border: 1px solid white;
+  padding: 15px;
+  font-family: IRANSans;
+  color: black;
+  box-shadow: 0 0 2px gray; }
+
+.executiveCadre img {
+  border-radius: 100px; }
+
+.latestNews h5 {
+  color: white;
+  font-weight: 400; }
+.latestNews p {
+  color: #4990E2;
+  font-weight: 400; }
+.latestNews img {
+  border-radius: 10px; }
+
+/*# sourceMappingURL=application.css.map */

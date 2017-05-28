@@ -1,0 +1,391 @@
+body {
+  font-family: IRANSans !important;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea, button {
+  font-family: IRANSans !important;
+}
+
+header {
+  background-image: url("../../images/header.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.mainConferencesNavbar {
+  .navbar-light .navbar-nav .nav-link {
+    color: white;
+    font-weight: 500;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 16px;
+  }
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: $cyan;
+  }
+  @media only screen and (max-width: 1250px) {
+    .navbar-light .navbar-nav .nav-link {
+      padding-right: 8px;
+      padding-left: 8px;
+      font-size: 14px;
+    }
+  }
+  @media only screen and (max-width: 1000px) {
+    .navbar-light .navbar-nav .nav-link {
+      padding-right: 6px;
+      padding-left: 6px;
+      text-align: center;
+      font-size: 15px;
+    }
+    .loginButton {
+      margin: 0 47%;
+      font-weight: 600;
+    }
+    .navbar-toggler, .navbar-toggler:focus {
+      color: white;
+      border: 1px solid white;
+      background-color: white;
+    }
+  }
+  .navbar-brand, .navbar-brand:hover, .navbar-brand:focus {
+    font-size: 16px;
+    color: white;
+  }
+  .loginButton, .loginButton:focus, .loginButton:hover {
+    border-radius: 9px;
+    background-color: $cyan;
+    border: 1px solid $cyan;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+  }
+}
+
+.subjectConfH2, .subjectConfH1, .header_address {
+  color: white;
+  font-weight: 400;
+}
+
+.header_address {
+  line-height: normal;
+}
+
+.subjectConfH2 {
+  margin-top: 12%;
+}
+
+.subjectConfH1 {
+  word-spacing: 3px;
+}
+
+.counter_second {
+  color: $lightGreen;
+}
+
+.counter_min {
+  color: $purple;
+}
+
+.counter_day, .counter_hour, .counter_min, .counter_second {
+  font-weight: 400;
+}
+
+.counter_hour {
+  color: cyan;
+}
+
+.counter_day {
+  color: $orange;
+}
+
+hr {
+  border-top: 2px solid white;
+}
+
+.hr-right {
+  margin-left: -40%;
+  width: 80%;
+}
+
+.hr-left {
+  margin-right: -40%;
+  width: 80%;
+}
+
+/* ============[ about conf ]=========== */
+.aboutConf {
+  h5 {
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+    width: 17%;
+  }
+  p {
+    line-height: 30px;
+    font-weight: 500;
+    word-spacing: 2.5px;
+  }
+  .btn {
+    width: 125px;
+    text-align: center;
+  }
+  .btn-primary, .btn-primary:focus {
+    background-color: $green;
+    border: 1px solid $green;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .btn-outline-success, .btn-outline-success:hover, .btn-outline-success:focus {
+    border: 1px solid $green;
+    color: $green;
+    box-shadow: 0 0 2px transparent;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}
+
+/* ============[ about conf(black) ]=========== */
+.blackBackAboutConf {
+  background-color: $darker;
+  z-index: -1;
+  p {
+    line-height: 30px;
+    font-weight: 500;
+    color: white;
+    word-spacing: 2.5px;
+    padding-top: 7%;
+  }
+  .btn {
+    width: 125px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .btn-primary, .btn-primary:focus {
+    background-color: $green;
+    border: 1px solid $green;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .btn-outline-success, .btn-outline-success:hover, .btn-outline-success:focus {
+    border: 1px solid $green;
+    color: white;
+    box-shadow: 0 0 2px transparent;
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+}
+
+/* ============[ mack book ]=========== */
+.mackBookImageBox {
+  margin-bottom: -9.5%;
+  z-index: 0;
+}
+
+/* ============[ present ]=========== */
+.presentBox {
+  hr {
+    border-top: 2px solid gray;
+    width: 29%;
+    text-align: center;
+  }
+  p {
+    font-weight: 400;
+  }
+  .thirdCupImg {
+    margin-left: -22%;
+    margin-top: 6%;
+  }
+  .secondCupImg {
+    margin-right: -22%;
+    margin-top: 6%;
+  }
+  .firstCumImgBox {
+    z-index: 0;
+  }
+  .secondCupImgBox {
+    z-index: -1;
+  }
+  @media only screen and (max-width: 1000px) {
+    .thirdCupImg {
+      margin-left: -13%;
+    }
+    .secondCupImg {
+      margin-right: -13%;
+    }
+  }
+}
+
+/* ============[ creative experience ]=========== */
+.creativeExperience {
+  background-image: url("../../images/blueHand.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.creativeExperience {
+  padding-top: 8%;
+  padding-bottom: 7%;
+  h4, p {
+    color: white;
+    word-spacing: 3px;
+  }
+  .btn-primary, .btn-primary:focus {
+    background-color: $green;
+    border: 1px solid $green;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 105px;
+    text-align: center;
+    margin-top: -2%;
+  }
+}
+
+/* ============[ speakers ]=========== */
+.speakerConf {
+  hr {
+    border-top: 2px solid gray;
+    text-align: center;
+    width: 13%;
+  }
+}
+
+.separate_hr {
+  border-top: 2px solid gray;
+}
+
+/* ============[ cadre ]=========== */
+.executiveCadre {
+  hr {
+    border-top: 2px solid gray;
+    text-align: center;
+    width: 9%;
+  }
+}
+
+/* ============[ latest news ]=========== */
+.latestNews {
+  background-image: url("../../images/mountain.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.latestNews {
+  hr {
+    border-top: 3px solid white;
+    text-align: center;
+    width: 15%;
+  }
+  h3 {
+    color: white;
+    font-weight: 400;
+  }
+  .btn-primary, .btn-primary:focus {
+    background-color: #4990E2;
+    border: 1px solid #4990E2;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 125px;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+}
+
+/* ============[ latest news ]=========== */
+.supportersBox {
+  hr {
+    border-top: 2px solid gray;
+    text-align: center;
+    width: 13%;
+  }
+  .lighter_hr {
+    border-top: 2px solid lightgray;
+    text-align: center;
+    width: 65%;
+  }
+}
+
+/* ============[ contact ]=========== */
+.contactWithUs {
+  background-color: $green;
+  h4 {
+    color: white;
+  }
+  hr {
+    border-top: 2px solid white;
+    text-align: center;
+    width: 10%;
+  }
+  input {
+    width: 100%;
+  }
+  input:focus, textarea:focus {
+    border: 1px solid transparent;
+  }
+  input, textarea {
+    border-radius: 8px;
+  }
+  input {
+    height: 50px;
+  }
+  textarea {
+    resize: none;
+  }
+  .btn-primary, .btn-primary:focus {
+    background-color: white;
+    border: 1px solid $green;
+    box-shadow: 0 0 2px transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    text-align: center;
+    color: $green;
+    font-weight: 600;
+    padding-top: 13px;
+    padding-bottom: 13px;
+  }
+}
+
+/* ============[ contact ]=========== */
+#map {
+  height: 350px;
+  width: 100%;
+}
+
+/* ============[ footer ]=========== */
+.footer {
+  background-color: $NavyBlue;
+  h5 {
+    color: white;
+  }
+  .fa {
+    color: white;
+  }
+  .fa:hover {
+    color: $green;
+  }
+}
+
+.strip {
+  background-color: $dark;
+  h6 {
+    color: white;
+    font-weight: 400;
+    line-height: normal;
+    word-spacing: 2px;
+  }
+}
+
+
