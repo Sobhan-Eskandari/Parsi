@@ -29,3 +29,30 @@ Route::post('/map', function (Request $request) {
 Route::get('/homePage', function () {
     return view('pages.homePage');
 });
+Route::get('/dashboard', function () {
+    return view('layouts.dashboard');
+});
+Route::get('/makePost', function () {
+    return view('pages.makePost');
+});
+Route::get('/answerMsg', function () {
+    return view('pages.answerMsg');
+});
+Route::get('/adminProfile', function () {
+    return view('pages.adminProfile');
+});
+Route::get('/posts', function () {
+    return view('pages.posts');
+});
+Route::get('/pms', function () {
+    return view('pages.pms');
+});
+Route::get('/setting', function () {
+    return view('pages.setting');
+});
+Route::get('/speakers', function () {
+    return view('pages.speakers');
+});
+Route::get('/staff', function () {
+    return view('pages.staff');
+});

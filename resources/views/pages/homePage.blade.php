@@ -23,7 +23,7 @@
     <header>
         <br>
         <div class="mainConferencesNavbar">
-            <nav class="navbar navbar-toggleable-md navbar-light">
+            <nav class="navbar navbar-toggleable-md navbar-light fixed-top backScrollColor" id="backScrollColor">
                 <button class="navbar-toggler navbar-toggler-left mt-2" type="button" data-toggle="collapse"
                         data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -69,26 +69,34 @@
             </nav>
         </div>
         <div class="container">
+            <br><br>
             <h3 class="text-center subjectConfH2">۱۵ شهریور ۱۳۹۶</h3>
         </div>
         <div class="container mt-4">
             <h2 class="text-center subjectConfH1">همایش بزرگ از ایده تا اجرا</h2>
         </div>
-        <div class="container mt-5">
-            <h1 class="text-center counter_number">
-                <span class="counter_second px-lg-3 px-md-3">25</span>
-                <span class="counter_min px-lg-3 px-md-3">25</span>
-                <span class="counter_hour px-lg-3 px-md-3">40</span>
-                <span class="counter_day px-lg-3 px-md-3">30</span>
-            </h1>
-        </div>
-        <div class="container">
-            <h5 class="text-center counter_day">
-                <span class="counter_second pr-lg-3  pl-lg-4 pr-md-3  pl-md-4 px-sm-3">ثانیه</span>
-                <span class="counter_min pr-lg-4 pl-lg-3 pr-md-4 pl-md-3 px-sm-3">دقیقه</span>
-                <span class="counter_hour pr-lg-4 pl-lg-4 pr-md-4 pl-md-4 px-sm-3">ساعت</span>
-                <span class="counter_day pr-lg-4 pl-lg-4 pr-md-4 pl-md-4 px-sm-3">روز</span>
-            </h5>
+        <div class="container mt-5 clockBox">
+            <div class="row justify-content-center">
+            <div id="clockdiv" class="text-center col-5">
+                <div>
+                    <span class="days counter_day "></span>
+                    <div class="smalltext counter_day ">روز</div>
+                </div>
+                <div>
+                    <span class="hours counter_hour"></span>
+                    <div class="smalltext counter_hour">ساعت</div>
+                </div>
+                <div>
+                    <span class="minutes counter_min"></span>
+                    <div class="smalltext counter_min">دقیقه</div>
+                </div>
+                <div>
+                    <span class="seconds counter_second"></span>
+                    <div class="smalltext counter_second ">ثانیه</div>
+                </div>
+            </div>
+
+            </div>
         </div>
         <div class="container mt-5 pt-5">
             <div class="row">
