@@ -15,7 +15,7 @@ function myMap() {
 $(document).ready(function(){
     $(window).scroll(function(){
         var scroll = $(window).scrollTop();
-        if (scroll > 550) {
+        if (scroll > 150) {
             $(".backScrollColor").css("background" , "#333");
         }
 
@@ -66,5 +66,6 @@ function initializeClock(id, endtime) {
 }
 
 var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
+
 initializeClock('clockdiv', deadline);
 

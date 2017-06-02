@@ -38,28 +38,28 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mr-md-auto ml-md-auto mt-3 mt-md-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">درباره همایش<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#aboutConfDown">درباره همایش<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">درباره رویداد</a>
+                            <a class="nav-link" href="#aboutEventDown">درباره رویداد</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">جوایز</a>
+                            <a class="nav-link" href="#presentDown">جوایز</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">سخنرانان</a>
+                            <a class="nav-link" href="#speakerDown">سخنرانان</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">بلاگ</a>
+                            <a class="nav-link" href="/blogPng">بلاگ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">حامیان</a>
+                            <a class="nav-link" href="#supporterDown">حامیان</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">درباره ما</a>
+                            <a class="nav-link" href="/aboutUs">درباره ما</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">تماس با ما</a>
+                            <a class="nav-link" href="#contactDown">تماس با ما</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 pl-lg-5 ml-lg-4">
@@ -112,7 +112,7 @@
                 <div class="col-2">
                     <hr class="hr-left">
                 </div>
-                <div class="col-1"></div>
+                <div class="col-1" id="aboutConfDown"></div>
             </div>
         </div>
         <br><br><br><br>
@@ -139,7 +139,7 @@
 
             </p>
             <div class="row">
-                <div class="col-12 mt-3 px-sm-0">
+                <div class="col-12 mt-3 px-sm-0" id="aboutEventDown">
                     <button type="button" class="btn btn-primary my-1">تهیه بلیط</button>
                     <button type="button" class="btn btn-outline-success mr-lg-5 my-1">اطلاعات بیشتر</button>
                 </div>
@@ -181,7 +181,7 @@
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1">
                     <button type="button" class="btn btn-primary">تهیه بلیط</button>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1">
+                <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1" id="presentDown">
                     <button type="button" class="btn btn-outline-success">اطلاعات بیشتر</button>
                 </div>
             </div>
@@ -223,8 +223,8 @@
                     <button type="button" class="btn btn-primary mr-lg-5">تهیه بلیط</button>
                 </div>
             </div>
-
         </div>
+        <div id="speakerDown"></div>
     </div>
 </div>
 {{--==========[ speaker conf ]========= --}}
@@ -232,29 +232,29 @@
     <h4 class="text-center mt-5">سخنرانان همایش</h4>
     <hr>
     <div class="row mt-5 pt-4">
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
     </div>
     <div class="row mt-5 pt-4 pb-4">
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
-        <div class="col-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
             @component('components.speakers')
             @endcomponent
         </div>
@@ -275,20 +275,22 @@
 </div>
 {{--==========[ latest news ]========= --}}
 <div class="container-fluid px-0">
-    <div class="latestNews py-5">
+    <div class="latestNews javaComponent py-5">
         <h3 class="text-center">آخرین اخبار همایش</h3>
         <hr>
         <div class="container">
             <div class="row justify-content-center mt-5 pt-3">
                 @for ($i = 0; $i < 4; $i++)
                     @component('components.java')
+                        @slot('style')
+                        @endslot
                     @endcomponent
                 @endfor
             </div>
         </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-4 mt-5 text-center">
+                <div class="col-md-4 mt-5 text-center" id="supporterDown">
                     <button type="button" class="btn btn-primary">مشاهده بیشتر</button>
                 </div>
             </div>
@@ -346,6 +348,7 @@
                  width="200px" height="200px">
         </div>
     </div>
+    <div id="contactDown"></div>
 </div>
 {{--==========[ contact ]========= --}}
 
@@ -398,6 +401,8 @@
 <div class="container-fluid strip pt-3 pb-2">
     <h6 class="text-center">طراحی شده توسط تیم حروف نگار-کنسرسیوم پارسی-1396</h6>
 </div>
+
+
 
 
 <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>

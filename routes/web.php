@@ -56,3 +56,15 @@ Route::get('/speakers', function () {
 Route::get('/staff', function () {
     return view('pages.staff');
 });
+Route::get('/blog', function () {
+    return view('layouts.blog');
+});
+Route::get('/aboutUs', function () {
+    return view('pages.aboutUs');
+});
+Route::get('/openPost', function () {
+    return view('pages.openPost');
+});
+Route::get('/blogPng', function () {
+    return view('pages.blogPng');
+});

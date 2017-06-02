@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6, input, textarea, button {
 }
 
 header {
-  background-image: url("../../images/header.png");
+  background-image: url("../../images/header-black.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -118,7 +118,7 @@ hr {
   h1{
     font-weight: 100;
     font-size: 40px;
-    margin: 40px 0px 20px;
+    margin: 40px 0 20px;
   }
 
   #clockdiv{
@@ -147,6 +147,11 @@ hr {
     font-size: 30px;
     font-weight: 400;
     font-family: IRANSans;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #backScrollColor{
+    background-color: transparent;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -272,8 +277,8 @@ hr {
 }
 
 .creativeExperience {
-  padding-top: 8%;
-  padding-bottom: 7%;
+  padding-top: 7%;
+  padding-bottom: 6%;
   h4, p {
     color: white;
     word-spacing: 3px;
@@ -303,6 +308,7 @@ hr {
   border-top: 2px solid gray;
 }
 
+
 /* ============[ cadre ]=========== */
 .executiveCadre {
   hr {
@@ -323,6 +329,9 @@ hr {
 }
 
 .latestNews {
+  a{
+    text-decoration: none;
+  }
   hr {
     border-top: 3px solid white;
     text-align: center;

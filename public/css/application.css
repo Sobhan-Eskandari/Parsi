@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, h6, input, textarea, button {
   font-family: IRANSans !important; }
 
 header {
-  background-image: url("../../images/header.png");
+  background-image: url("../../images/header-black.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -96,7 +96,7 @@ hr {
   .clockBox h1 {
     font-weight: 100;
     font-size: 40px;
-    margin: 40px 0px 20px; }
+    margin: 40px 0 20px; }
   .clockBox #clockdiv {
     font-family: sans-serif;
     display: inline-block;
@@ -118,6 +118,9 @@ hr {
     font-weight: 400;
     font-family: IRANSans; }
 
+@media only screen and (min-width: 992px) {
+  #backScrollColor {
+    background-color: transparent; } }
 @media only screen and (max-width: 991px) {
   #backScrollColor {
     background-color: #333; } }
@@ -213,8 +216,8 @@ hr {
   height: 100%; }
 
 .creativeExperience {
-  padding-top: 8%;
-  padding-bottom: 7%; }
+  padding-top: 7%;
+  padding-bottom: 6%; }
   .creativeExperience h4, .creativeExperience p {
     color: white;
     word-spacing: 3px; }
@@ -252,6 +255,8 @@ hr {
   width: 100%;
   height: 100%; }
 
+.latestNews a {
+  text-decoration: none; }
 .latestNews hr {
   border-top: 3px solid white;
   text-align: center;
@@ -334,6 +339,68 @@ hr {
     line-height: normal;
     word-spacing: 2px; }
 
+.second-header {
+  background-image: url("../../images/blog_cover.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  margin-top: 75px; }
+
+.third-header {
+  width: 100%;
+  height: 100%;
+  margin-top: 2px; }
+
+.main-title-layout {
+  color: white;
+  padding-top: 120px; }
+
+.blogColor {
+  background-color: #333; }
+
+.openPost h6 {
+  color: darkgray;
+  font-size: 15px; }
+.openPost image {
+  width: 674.5px;
+  height: 100%; }
+.openPost p {
+  line-height: normal; }
+.openPost .link {
+  color: black; }
+
+.blogPngBox a {
+  text-decoration: none; }
+.blogPngBox a {
+  color: #222222; }
+.blogPngBox .pBox {
+  direction: ltr; }
+.blogPngBox .page-link {
+  border-radius: 10px;
+  background-color: #eee;
+  border: 2px solid white; }
+.blogPngBox .page-link:active:focus {
+  background-color: #46B594;
+  color: white; }
+.blogPngBox .page-item:first-child .page-link {
+  margin-left: 0;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px; }
+.blogPngBox .page-item:last-child .page-link {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px; }
+
+.aboutUsBlogBox .confTitleBlog {
+  font-size: 21px; }
+.aboutUsBlogBox .underline_member {
+  border-top: 2px solid #46B594;
+  width: 20%; }
+
+.aboutUsBlogBox_backColor {
+  background-color: #eee; }
+
 .speakerConf img {
   border-radius: 100px; }
 .speakerConf .job {
@@ -342,24 +409,47 @@ hr {
   font-size: 18px; }
 
 .tooltip > .tooltip-inner {
-  background-color: white;
-  color: #FFFFFF;
-  border: 1px solid white;
+  background-color: #232323;
   padding: 15px;
   font-family: IRANSans;
-  color: black;
   box-shadow: 0 0 2px gray; }
+
+.tooltip.bs-tether-element-attached-bottom .tooltip-inner::before,
+.tooltip.tooltip-top .tooltip-inner::before {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  content: "";
+  border-width: 5px 5px 0;
+  border-top-color: #232323; }
+
+.hover12 figure {
+  background: #2e2e2e; }
+
+.hover12 figure img {
+  opacity: 1;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out; }
+
+.hover12 figure:hover img {
+  opacity: .5; }
+
+figure {
+  height: 170px;
+  width: 170px;
+  background: #fff;
+  border-radius: 100px; }
 
 .executiveCadre img {
   border-radius: 100px; }
 
-.latestNews h5 {
+.javaComponent h5 {
   color: white;
   font-weight: 400; }
-.latestNews p {
+.javaComponent p {
   color: #4990E2;
   font-weight: 400; }
-.latestNews img {
+.javaComponent img {
   border-radius: 10px; }
 
 /*# sourceMappingURL=application.css.map */
