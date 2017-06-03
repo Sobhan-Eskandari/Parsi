@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MessageAnswerRequest extends FormRequest
+class PostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,17 +24,19 @@ class MessageAnswerRequest extends FormRequest
     public function rules()
     {
         return [
-            'subject' => 'required',
-            'message' => 'required|min:5',
+            'title' => 'required',
+            'body' => 'required|min:5',
+            'image' => 'image',
         ];
     }
 
     public function messages()
     {
         return [
-            'subject.required' => 'وارد کردن موضوع اجباری است',
-            'message.required' => 'وارد کردن پیام اجباری است',
-            'message.min' => 'پیام باید حداقل 5 حرف باشد',
+            'title.required' => 'وارد کردن موضوع اجباری است',
+            'body.required' => 'وارد کردن متن اجباری است',
+            'body.min' => 'متن باید حداقل 5 حرف باشد',
+            'image.image' => 'فایل فرستاده شده تصویر نمی باشد',
         ];
     }
 }

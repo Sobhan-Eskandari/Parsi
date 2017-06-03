@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class MessageStoreRequest extends FormRequest
+class UserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,8 +25,9 @@ class MessageStoreRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'email' => 'email|required',
-            'message' => 'required|min:5'
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+            'password_confirmation' => 'confirmed',
         ];
     }
 
@@ -35,9 +36,10 @@ class MessageStoreRequest extends FormRequest
         return [
             'name.required' => 'وارد کردن نام اجباری است',
             'email.required' => 'وارد کردن ایمیل اجباری است',
-            'email.email' => 'ایمیل وارد شده معتبر نیست',
-            'message.required' => 'وارد کردن پیام اجباری است',
-            'message.min' => 'پیام باید حداقل 5 حرف باشد',
+            'email.email' => 'ایمیل وارد شده معتبر نمی باشد',
+            'password.required' => 'وارد کردن رمز عبور اجباری است',
+            'password.min' => 'رمز عبور باید حداقل 6 رقم باشد',
+            'password_confirmation.confirmed' => 'تایید رمز عبور با رمز عبور وارده شده مطابقت ندارد',
         ];
     }
 }

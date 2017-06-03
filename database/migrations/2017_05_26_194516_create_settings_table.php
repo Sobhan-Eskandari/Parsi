@@ -16,6 +16,7 @@ class CreateSettingsTable extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
             $table->longText('about_us');
+            $table->string('about_us_photo');
             $table->text('about_conference');
             $table->text('about_event');
             $table->string('ticket_link');
