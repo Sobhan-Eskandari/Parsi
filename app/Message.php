@@ -10,5 +10,6 @@ class Message extends Model
         'name',
         'email',
         'message',
+        'read',
     ];
 }

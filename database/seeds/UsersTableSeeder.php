@@ -16,14 +16,20 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->truncate();
-        $faker = Faker::create('fa_IR');
+        $faker = Faker::create("fa_IR");
+        $users = [];
+        $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1,50) as $index) {
-            User::create([
+        foreach (range(1, 20) as $index){
+            $users[] = [
                 'name'=>$faker->name,
                 'email'=>$faker->unique()->email,
                 'password'=>bcrypt('1234567890'),
-            ]);
+                'created_at' => $time,
+                'updated_at' => $time,
+            ];
         }
+
+        DB::table('users')->insert($users);
     }
 }

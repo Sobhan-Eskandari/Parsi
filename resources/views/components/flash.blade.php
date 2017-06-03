@@ -1,0 +1,1 @@
+@if(Session::has('created'))    <div class="alert alert-success">        <p>{{ session('created') }}</p>    </div>@endif@if(Session::has('edited'))    <div class="alert alert-warning">        <p>{{ session('edited') }}</p>    </div>@endif@if(Session::has('deleted'))    <div class="alert alert-danger">        <p>{{ session('deleted') }}</p>    </div>@endif

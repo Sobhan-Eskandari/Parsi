@@ -1,7 +1,7 @@
 <tr>
-    <td>صفر تا صد سی شارپ</td>
-    <td>ضریب همبستگی پیرسون که به نام های...</td>
-    <td>96/10/5</td>
+    <td>{{ $title }}</td>
+    <td>{{ $body }}</td>
+    <td>{{ $date }}</td>
     <td>
         <div class="btn-group">
             <a class=" dropdown-toggle" data-toggle="dropdown" href="#">
@@ -11,9 +11,13 @@
                 </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li><a  href="#">ویرایش</a></li>
+                <li><a href="{{ route('posts.edit', $id) }}">ویرایش</a></li>
                 <li class="divider"></li>
-                <li><a  href="#">حذف</a></li>
+                <li>
+                    {!! Form::open(['method'=>'DELETE', 'action'=>['PostController@destroy', $id]]) !!}
+                        {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:25px;']) !!}
+                    {!! Form::close() !!}
+                </li>
             </ul>
         </div>
     </td>

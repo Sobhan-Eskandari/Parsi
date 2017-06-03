@@ -18,7 +18,7 @@ class CreateLecturersTable extends Migration
             $table->string('image')->nullable(true);
             $table->string('name');
             $table->string('profession');
-            $table->text('description')->nullable(true);
+            $table->text('desc')->nullable(true);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

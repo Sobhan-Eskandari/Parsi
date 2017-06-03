@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LecturerRequest;
 use App\Lecturer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class LecturerController extends Controller
 {
@@ -14,7 +16,8 @@ class LecturerController extends Controller
      */
     public function index()
     {
-        //
+        $lecturers = Lecturer::orderByRaw('created_at desc')->paginate(4);
+        return view('pages.speakers', compact('lecturers'));
     }
 
     /**
@@ -33,9 +36,9 @@ class LecturerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LecturerRequest $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
@@ -80,6 +83,8 @@ class LecturerController extends Controller
      */
     public function destroy(Lecturer $lecturer)
     {
-        //
+        $lecturer->delete();
+        Session::flash('deleted', 'سخنران مورد نظر پاک شد');
+        return redirect(route('lecturers.index'));
     }
 }

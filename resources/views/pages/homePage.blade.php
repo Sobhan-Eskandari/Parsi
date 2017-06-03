@@ -63,7 +63,7 @@
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 pl-lg-5 ml-lg-4">
-                        <button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="submit">تهیه بلیط</button>
+                        <a href="#"><button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="button">تهیه بلیط</button></a>
                     </form>
                 </div>
             </nav>
@@ -356,30 +356,32 @@
     <h4 class="text-center">تماس با ما</h4>
     <hr>
     <div class="container">
-    <div class="row justify-content-center  mt-5">
-            <div class="col-8">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-6 col-sm-12 pl-lg-5 py-1">
-                            <input type="text" class="form-control" placeholder="نام شما" tabindex="1">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-12 pr-lg-5 py-1">
-                            <input type="email" class="form-control" placeholder="ایمیل شما" tabindex="2">
+        {!! Form::open(['method'=>'POST', 'action'=>'MessageController@store']) !!}
+            <div class="row justify-content-center  mt-5">
+                <div class="col-8">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-6 col-sm-12 pl-lg-5 py-1">
+                            <input name="name" type="text" class="form-control" placeholder="نام شما" tabindex="1">
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 pr-lg-5 py-1">
+                            <input name="email" type="email" class="form-control" placeholder="ایمیل شما" tabindex="2">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-8">
-                <div class="form-group pt-4">
-                    <textarea class="form-control" rows="10" tabindex="3" placeholder="متن پیام"></textarea>
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="form-group pt-4">
+                        <textarea name="message" class="form-control" rows="10" tabindex="3" placeholder="متن پیام"></textarea>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-md-4 mt-4 text-center">
-                <button type="button" class="btn btn-primary">ارسال پیام</button>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mt-4 text-center">
+                    <button type="submit" class="btn btn-primary">ارسال پیام</button>
+                </div>
             </div>
-        </div>
+        {!! Form::close() !!}
     </div>
 </div>
 {{--==========[ map ]========= --}}

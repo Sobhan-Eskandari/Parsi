@@ -10,6 +10,6 @@ class Lecturer extends Model
         'name',
         'image',
         'profession',
-        'description',
+        'desc',
     ];
 }

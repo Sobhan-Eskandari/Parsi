@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @component('components.errors') @endcomponent
+
+    @component('components.flash') @endcomponent
+
     <div class="confSpeakersBox">
         <br><br>
         <div class="row">
@@ -11,10 +15,11 @@
         </div>
         <hr>
         <br>
+        {!! Form::open(['method'=>'POST', 'action'=>'CrewController@store', 'files' => true]) !!}
         <div class="row">
             <div class="col-lg-3 col-xs-10 pull-right">
                 <label for="">نام</label>
-                <input class="form-control" type="text" tabindex="1">
+                <input name="name" class="form-control" type="text" tabindex="1">
             </div>
         </div>
         <br>
@@ -29,9 +34,10 @@
         <br>
         <div class="row">
             <div class="col-lg-1 col-md-6 col-md-10 pull-right">
-                <button class="btn conf_button_upload ch-co-btn" type="button">تایید</button>
+                {!! Form::submit('تایید', ['class'=>'btn conf_button_upload ch-co-btn']) !!}
             </div>
         </div>
+        {!! Form::close() !!}
         <br>
         <hr>
         <br>
@@ -46,15 +52,15 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @component('components.staffRowTable')
-                    @endcomponent
-                    @component('components.staffRowTable')
-                    @endcomponent
-                    @component('components.staffRowTable')
-                    @endcomponent
-                    @component('components.staffRowTable')
-                    @endcomponent
+                    @foreach($crews as $crew)
+                        @component('components.staffRowTable')
+                            @slot('id') {{ $crew->id }} @endslot
+                            @slot('name') {{ $crew->name }} @endslot
+                            @slot('date') {{ $crew->created_at->format('y/m/d') }} @endslot
+                        @endcomponent
+                    @endforeach
                     </tbody>
+                    {{ $crews->links() }}
                 </table>
 
             </div>
@@ -65,4 +71,8 @@
 
 
 
+@endsection
+
+@section('crews')
+    active
 @endsection

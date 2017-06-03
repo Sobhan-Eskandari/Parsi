@@ -5,17 +5,16 @@
                 <div class="row">
                     <span class="pull-right one_row_table">
                         <h4 class="table_title">
-                            <span class="name_h">سعید امیری</span>
+                            <span class="name_h">{{ $name }}</span>
                             &nbsp;|
-                            <span class="date">&nbsp;1395/5/21
+                            <span class="date">&nbsp;{{ $date }}
                             </span>
                         </h4>
                     </span>
                 </div>
                 <div class="row">
                     <p class="more_exp_tb">
-                        وقتی روش حل کردن مشکلی غلط باشد مهم نیست چقدر تلاش کنیم... در حالی که با تفکر بر روی روش درست
-                        بسیار راحت می‌شود آن مشکل را حل کرد...
+                        {{ $message }}
                     </p>
                 </div>
             </div>
@@ -35,9 +34,13 @@
                 </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li><a href="#">پاسخ</a></li>
+                <li><a href="{{ route('messages.show', $id) }}">پاسخ</a></li>
                 <li class="divider"></li>
-                <li><a href="#">حذف</a></li>
+                <li>
+                    {!! Form::open(['method'=>'DELETE', 'action'=>['MessageController@destroy', $id]]) !!}
+                        {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:25px;']) !!}
+                    {!! Form::close() !!}
+                </li>
             </ul>
         </div>
     </td>

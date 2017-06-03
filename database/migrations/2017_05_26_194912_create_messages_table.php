@@ -18,6 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->text('message');
+            $table->unsignedTinyInteger('read')->default(0);
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
         });

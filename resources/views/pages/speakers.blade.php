@@ -2,6 +2,10 @@
 
 @section('content')
 
+    @component('components.errors') @endcomponent
+
+    @component('components.flash') @endcomponent
+
     <div class="confSpeakersBox">
         <br><br>
         <div class="row">
@@ -11,21 +15,29 @@
         </div>
         <hr>
         <br>
+        {!! Form::open(['method'=>'POST', 'action'=>'LecturerController@store', 'files' => true]) !!}
+
+
         <div class="row">
             <div class="col-lg-3 col-xs-10 pull-right">
                 <label for="">نام سخنران</label>
-                <input class="form-control" type="text" tabindex="1">
+                <input name="name" class="form-control" type="text" tabindex="1">
             </div>
             <div class="col-lg-5 col-xs-10 pull-right">
                 <label for="">حرفه</label>
-                <input class="form-control" type="text" tabindex="2">
+                <input name="profession" class="form-control" type="text" tabindex="2">
             </div>
         </div>
         <br>
         <div class="row">
             <div class="col-lg-8 col-xs-10 pull-right">
            <label>توضیحات</label>
-         <textarea class="form-control" tabindex="3"></textarea>
+                {!! Form::textarea('desc') !!}
+                <script>
+                    CKEDITOR.replace( 'desc',{
+                        height: 150
+                    } );
+                </script>
             </div>
         </div>
         <br>
@@ -40,9 +52,10 @@
         <br>
         <div class="row">
             <div class="col-lg-1 col-md-6 col-md-10 pull-right">
-                <button class="btn conf_button_upload ch-co-btn" type="button">تایید</button>
+                {!! Form::submit('تایید', ['class'=>'btn conf_button_upload ch-co-btn']) !!}
             </div>
         </div>
+        {!! Form::close() !!}
         <br>
         <hr>
         <br>
@@ -53,20 +66,23 @@
                     <tr>
                         <th>نام</th>
                         <th>حرفه</th>
+                        {{--<th>توضیحات</th>--}}
                         <th>تاریخ</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                   @component('components.speakersRowTable')
-                    @endcomponent
-                   @component('components.speakersRowTable')
-                   @endcomponent
-                   @component('components.speakersRowTable')
-                   @endcomponent
-                   @component('components.speakersRowTable')
-                   @endcomponent
+                    @foreach($lecturers as $lecturer)
+                        @component('components.speakersRowTable')
+                            @slot('id') {{ $lecturer->id }} @endslot
+                            @slot('name') {{ $lecturer->name }} @endslot
+                            @slot('profession') {{ $lecturer->profession }} @endslot
+{{--                            @slot('desc') {{ str_limit($lecturer->desc, 50) }} @endslot--}}
+                            @slot('date') {{ $lecturer->created_at->format('y/m/d') }} @endslot
+                        @endcomponent
+                    @endforeach
                     </tbody>
+                    {{ $lecturers->links() }}
                 </table>
 
             </div>
@@ -82,4 +98,8 @@
 
 
 
+@endsection
+
+@section('lecturers')
+    active
 @endsection

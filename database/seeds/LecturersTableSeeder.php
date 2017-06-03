@@ -24,7 +24,7 @@ class LecturersTableSeeder extends Seeder
             $lecturers[] = [
                 'name' => $faker->name,
                 'profession' => $faker->company,
-                'description' => $faker->realText(300),
+                'desc' => $faker->realText(300),
                 'created_at' => $time,
                 'updated_at' => $time,
             ];

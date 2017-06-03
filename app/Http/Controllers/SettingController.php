@@ -14,7 +14,8 @@ class SettingController extends Controller
      */
     public function index()
     {
-        //
+        $setting = Setting::findOrFail(1);
+        return view('pages.setting', compact('setting'));
     }
 
     /**
@@ -69,7 +70,7 @@ class SettingController extends Controller
      */
     public function update(Request $request, Setting $setting)
     {
-        //
+        dd($request->all());
     }
 
     /**

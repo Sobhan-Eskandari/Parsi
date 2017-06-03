@@ -2,14 +2,15 @@
 
 @section('content')
 
+    @component('components.flash') @endcomponent
+
     <div class="confPostBox">
 
         <!-----------table------------>
         <br><br>
         <div class="row margin_right_2nd_title">
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-left">
-                <button class="btn adv_btn pull-left">ایجاد پست&nbsp;<i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
+                <a href="{{ route('posts.create') }}"><button class="btn adv_btn pull-left">ایجاد پست&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button></a>
             </div>
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-right">
                 <h4 class="list_title">لیست پست ها</h4>
@@ -28,10 +29,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @for ($i = 0; $i < 8; $i++)
+                    @foreach($posts as $post)
                         @component('components.postRowTable')
+                            @slot('id') {{ $post->id }} @endslot
+                            @slot('title') {{ $post->title }} @endslot
+                            @slot('body') {{ str_limit($post->body, 50) }} @endslot
+                            @slot('date') {{ $post->created_at->format('y/m/d') }} @endslot
                         @endcomponent
-                    @endfor
+                    @endforeach
                     </tbody>
                 </table>
 
@@ -39,17 +44,13 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-xs-11 col-xs-offset-0 padding_pagination">
-                <ul class="pagination">
-
-                    <li class="activate_pag"><a href="#">1</a></li>
-                    <li class="activate_pag"><a class="active" href="#">2</a></li>
-                    <li class="activate_pag"><a href="#">3</a></li>
-                    <li class="activate_pag"><a href="#">4</a></li>
-                    <li class="activate_pag"><a href="#">50</a></li>
-
-                </ul>
+                {{ $posts->links() }}
             </div>
         </div>
     </div>
 
+@endsection
+
+@section('posts')
+    active
 @endsection

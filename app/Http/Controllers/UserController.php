@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class UserController extends Controller
 {
@@ -14,7 +18,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+        return view('pages.adminProfile', compact('user'));
     }
 
     /**
@@ -67,9 +72,21 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, $id)
     {
-        //
+        $input = $request->all();
+        $user = Auth::user();
+        $current_password = Auth::user()->password;
+
+        if(Hash::check($input['old_password'], $current_password)) {
+            $input['password'] = bcrypt($request->password);
+            $user->update($input);
+            Session::flash('created', 'رمز عبور شما تغییر کرد');
+        }else{
+            Session::flash('deleted', 'رمز عبور فعلی اشتباه است');
+        }
+
+        return redirect(route('admin.index'));
     }
 
     /**

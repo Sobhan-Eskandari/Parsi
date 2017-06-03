@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @component('components.flash') @endcomponent
 
 <div class="confPmsBox">
     <br><br>
@@ -15,27 +16,19 @@
                 </tr>
                 </thead>
                 <tbody>
-                @component('components.pmsRowTable')
-                    @slot('style')
-                        background-color: #f4f4f4;
-                    @endslot
-                @endcomponent
-                @component('components.pmsRowTable')
-                    @slot('style')
-                    @endslot
-                @endcomponent
-                @component('components.pmsRowTable')
-                    @slot('style')
-                    @endslot
-                @endcomponent
-                @component('components.pmsRowTable')
-                    @slot('style')
-                    @endslot
-                @endcomponent
-                @component('components.pmsRowTable')
-                    @slot('style')
-                    @endslot
-                @endcomponent
+                @foreach($messages as $message)
+                    @component('components.pmsRowTable')
+                        @slot('id') {{ $message->id }} @endslot
+                        @if($message->read === 0)
+                            @slot('style') background-color: #f4f4f4; @endslot
+                        @else
+                            @slot('style') @endslot
+                        @endif
+                        @slot('name') {{ $message->name }} @endslot
+                        @slot('message') {{ str_limit($message->message, 150) }} @endslot
+                        @slot('date') {{ $message->created_at->format('y/m/d') }} @endslot
+                    @endcomponent
+                @endforeach
                 </tbody>
             </table>
 
@@ -43,21 +36,13 @@
     </div>
     <div class="row">
         <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0 col-xs-11 col-xs-offset-0 padding_pagination">
-            <ul class="pagination">
-
-                <li class="activate_pag"><a href="#">1</a></li>
-                <li class="activate_pag"><a class="active" href="#">2</a></li>
-                <li class="activate_pag"><a href="#">3</a></li>
-                <li class="activate_pag"><a href="#">4</a></li>
-                <li class="activate_pag"><a href="#">50</a></li>
-
-            </ul>
+            {{ $messages->links() }}
         </div>
     </div>
 </div>
 
 @endsection
 
-@section('badge')
-    <span class="badge pull-left hidden-xs hidden-sm hidden-md">9</span>
+@section('messages')
+    active
 @endsection

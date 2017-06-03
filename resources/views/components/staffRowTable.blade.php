@@ -1,9 +1,9 @@
 <tr>
     <td>
         <img src="{{ asset('images/icone.png') }}" class="icone_user">
-        سعید امیری
+        {{ $name }}
     </td>
-    <td>96/9/2</td>
+    <td>{{ $date }}</td>
     <td class="upper_td">
 
         <div class="btn-group">
@@ -14,9 +14,13 @@
                 </div>
             </a>
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li><a  href="#">ویرایش</a></li>
+                <li><a href="{{ route('crews.edit', $id) }}">ویرایش</a></li>
                 <li class="divider"></li>
-                <li><a  href="#">حذف</a></li>
+                <li>
+                    {!! Form::open(['method'=>'DELETE', 'action'=>['CrewController@destroy', $id]]) !!}
+                        {!! Form::submit('حذف', ['id'=>'delete', 'style' => 'background: none; border: none; margin-left:25px;']) !!}
+                    {!! Form::close() !!}
+                </li>
             </ul>
         </div>
 
