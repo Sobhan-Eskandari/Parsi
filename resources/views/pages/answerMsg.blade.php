@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
-
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | پاسخ به پیام
+@endsection
 @section('content')
 
     @component('components.errors') @endcomponent

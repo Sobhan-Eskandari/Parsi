@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | پیام ها
+@endsection
+
 @section('content')
 
     @component('components.flash') @endcomponent

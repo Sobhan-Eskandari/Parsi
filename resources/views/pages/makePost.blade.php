@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | ساخت پست
+@endsection
+
 @section('content')
 
     @component('components.errors') @endcomponent
@@ -20,7 +24,8 @@
             <div class="col-lg-4 col-md-10 col-sm-10 col-xs-10 pull-right">
                 <div class="form-group">
                     <label class="conf_label_post"><big>عنوان پست</big></label>
-                    <input name="title" class="form-control sendMessageInput" type="text" id="sendMessageInput" tabindex="1"></div>
+                    {!! Form::text('title', null, ['class' => 'form-control sendMessageInput', 'id' => 'sendMessageInput']) !!}
+                </div>
             </div>
             <div class="col-lg-8 col-md-12 col-md-12">
                 <div class="custom-file-upload">
@@ -36,9 +41,6 @@
                 <div class="form-group">
 
                     {!! Form::textarea('body') !!}
-
-                    <textarea class="form-control inputCommentsMessage" id="inputCommentsMessage"
-                              placeholder="متن پاسخ را وارد نمایید" tabindex="4" name="postText"></textarea>
 
                 </div>
                 <script>
@@ -72,12 +74,6 @@
     </script>
 
 @endsection
-
-        <br></div>
-    <script>
-        CKEDITOR.replace('postText');
-    </script>
-
 
 
 @section('posts')

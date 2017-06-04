@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Dashboard</title>
+    <title>@yield('title')</title>
 
     <script src="//cdn.ckeditor.com/4.6.1/full/ckeditor.js"></script>
 
@@ -29,7 +29,7 @@
             <!--menu_bar-->
                 <div class="row menu_shadow">
                     <div class="col-xs-4 pull-right home_top">
-                        <h4><a href="#" class="zhenic_menubar"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;همایش</a>
+                        <h4><a href="{{ route('home') }}" class="zhenic_menubar"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;همایش</a>
                         </h4></div>
                     <div class="col-xs-4 pull-left exit_up">
                         <a href="{{ url('/logout') }}"
@@ -76,28 +76,6 @@
 
             <a href="{{ route('settings.index') }}"><h5 class="admin_side_title @yield('settings')"><i class="fa fa-cogs set_fa pull-right" aria-hidden="true"></i><span class="hidden-xs">تنظیمات</span></h5></a>
 
-        </div>
-
-
-            <h5 class="zhenic_title">همایش</h5>
-            <a href="/posts"><h5 class="admin_side_title"><i class="fa fa-file-text-o set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">پست ها</span></h5></a>
-            <a href="/speakers"><h5 class="admin_side_title"><i class="fa fa-address-card set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">سخنرانان</span></h5></a>
-            <a href="/staff"><h5 class="admin_side_title"><i class="fa fa-address-book set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">کادر اجرایی</span> @yield('badge')</h5></a>
-            <a href="/pms"><h5 class="admin_side_title"><i class="fa fa-comments set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">پیام ها</span></h5></a>
-            <a href="/adminProfile"><h5 class="admin_side_title"><i class="fa fa-user set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">پروفایل ادمین</span></h5></a>
-            <a href="/setting"><h5 class="admin_side_title"><i class="fa fa-cogs set_fa pull-right"
-                                                       aria-hidden="true"></i><span
-                            class="hidden-xs">تنظیمات</span></h5></a>
         </div>
 
     </div>

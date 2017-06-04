@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | کادر اجرایی
+@endsection
+
 @section('content')
 
     @component('components.errors') @endcomponent
@@ -19,7 +23,7 @@
         <div class="row">
             <div class="col-lg-3 col-xs-10 pull-right">
                 <label for="">نام</label>
-                <input name="name" class="form-control" type="text" tabindex="1">
+                {!! Form::text('name', null, ['class' => 'form-control']) !!}
             </div>
         </div>
         <br>

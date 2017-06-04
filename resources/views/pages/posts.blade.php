@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | پست ها
+@endsection
+
 @section('content')
 
     @component('components.flash') @endcomponent
@@ -12,9 +16,6 @@
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-left">
 
                 <a href="{{ route('posts.create') }}"><button class="btn adv_btn pull-left">ایجاد پست&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button></a>
-
-                <button class="btn adv_btn pull-left"><a href="/makePost">ایجاد پست&nbsp;</a><i class="fa fa-plus" aria-hidden="true"></i>
-                </button>
 
             </div>
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-right">

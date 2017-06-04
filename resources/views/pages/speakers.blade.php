@@ -1,5 +1,9 @@
 @extends('layouts.dashboard')
 
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | سخنرانان
+@endsection
+
 @section('content')
 
     @component('components.errors') @endcomponent
@@ -21,11 +25,11 @@
         <div class="row">
             <div class="col-lg-3 col-xs-10 pull-right">
                 <label for="">نام سخنران</label>
-                <input name="name" class="form-control" type="text" tabindex="1">
+                {!! Form::text('name', null, ['class' => 'form-control']) !!}
             </div>
             <div class="col-lg-5 col-xs-10 pull-right">
                 <label for="">حرفه</label>
-                <input name="profession" class="form-control" type="text" tabindex="2">
+                {!! Form::text('profession', null, ['class' => 'form-control']) !!}
             </div>
         </div>
         <br>
@@ -44,7 +48,6 @@
         <div class="row">
             <div class="col-lg-11 col-md-6 col-md-12 pull-right">
                 <div class="custom-file-upload">
-                    <!--<label for="file">File: </label>-->
                     <input type="file" id="file" name="myfiles[]" multiple />
                 </div>
             </div>
@@ -55,8 +58,6 @@
             <div class="col-lg-1 col-md-6 col-md-10 pull-right">
 
                 {!! Form::submit('تایید', ['class'=>'btn conf_button_upload ch-co-btn']) !!}
-
-                <button class="btn conf_button_upload ch-co-btn" type="submit">تایید</button>
 
             </div>
         </div>
@@ -95,13 +96,6 @@
 
 
     </div>
-
-
-
-
-
-
-
 
 @endsection
 

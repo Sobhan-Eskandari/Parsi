@@ -1,5 +1,7 @@
 @extends('layouts.dashboard')
-
+@section('title')
+    {{ implode(\App\Setting::get(['site_title'])->toArray()[0]) }} | تنظیمات
+@endsection
 @section('content')
 
     {!! Form::model($setting , ['method'=>'PUT', 'action'=>['SettingController@update', $setting->id], 'files' => true]) !!}
@@ -13,9 +15,6 @@
 
                     {!! Form::text('site_title', null, ['id' => 'sendMessageInput', 'class' => 'form-control sendMessageInput', 'tabindex' => '1']) !!}
                 </div>
-
-                    <input class="form-control sendMessageInput" type="text" id="sendMessageInput" tabindex="1"></div>
-
             </div>
             <div class="col-lg-8 col-md-6 col-md-10 pull-right 2nd-upload-button">
                 <div class="custom-file-upload 2nd-upload-button">
@@ -99,9 +98,6 @@
                     } );
                 </script>
 
-                 <textarea class="form-control textEditor writeCreatePostBox"
-                           tabindex="2"  name="postText1"></textarea>
-
             </div>
         </div>
         <br><br><br>
@@ -115,9 +111,6 @@
                         height: 150
                     } );
                 </script>
-
-                <textarea class="form-control textEditor writeCreatePostBox"
-                          tabindex="3"  name="postText2"></textarea>
 
             </div>
         </div>
@@ -133,9 +126,6 @@
                         height: 150
                     } );
                 </script>
-
-                <textarea class="form-control textEditor writeCreatePostBox"
-                          tabindex="4"  name="postText3"></textarea>
 
             </div>
         </div>
@@ -191,11 +181,6 @@
         </div>
         <br><br><br>
     </div>
-    <script>
-        CKEDITOR.replace('postText1');
-        CKEDITOR.replace('postText2');
-        CKEDITOR.replace('postText3');
-    </script>
 
     {!! Form::close() !!}
 
@@ -213,7 +198,7 @@
             {{--map: map--}}
         {{--});--}}
     {{--</script>--}}
-{{--    <script src="{{ asset('js/map.js') }}"></script>--}}
+    <script src="{{ asset('js/map.js') }}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJXj14jwwsgwA1DeIRMY5jBiRwT_byxVs&callback=myMap"></script>
 @endsection
 
