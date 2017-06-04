@@ -8,6 +8,7 @@ class Setting extends Model
 {
     protected $fillable = [
         'about_us',
+        'about_us_photo',
         'about_conference',
         'about_event',
         'ticket_link',

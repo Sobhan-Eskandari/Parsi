@@ -18,7 +18,7 @@ $(document).ready(function () {
 
             let $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
                 $wrap = $('<div class="file-upload-wrapper">'),
-                $input = $('<input type="text" class="file-upload-input" />'),
+                $input = $('<input type="text" class="file-upload-input" readonly/>'),
                 // Button that will be used in non-IE browsers
                 $button = $('<button type="button" class="file-upload-button">آپلود عکس</button>'
                 ,'<button type="button" class="file-upload-button">llllll</button>'),

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\PostRequest;
 use App\Post;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -38,7 +39,15 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        dd($request->all());
+        $input = $request->all();
+        if($file = $request->file('image')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        Post::create($input);
+        Session::flash('created', 'پست ساخته شد');
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -60,7 +69,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('pages.editPost', compact('post'));
     }
 
     /**
@@ -70,9 +79,20 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $input = $request->all();
+        if($file = $request->file('image')){
+            if($post->image){
+                File::delete('images/' . $post->image);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        $post->update($input);
+        Session::flash('edited', 'پست ویرایش شد');
+        return redirect(route('posts.index'));
     }
 
     /**
@@ -83,6 +103,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        if($post->image){
+            File::delete('images/' . $post->image);
+        }
         $post->delete();
         Session::flash('deleted', 'پست مورد نظر با موفقیت پاک شد');
         return redirect(route('posts.index'));

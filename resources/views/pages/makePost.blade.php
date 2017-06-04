@@ -29,8 +29,7 @@
             </div>
             <div class="col-lg-8 col-md-12 col-md-12">
                 <div class="custom-file-upload">
-                    <!--<label for="file">File: </label>-->
-                    <input type="file" id="file" name="myfiles[]" multiple />
+                    <input type="file" id="file" name="image"/>
                 </div>
             </div>
         </div>

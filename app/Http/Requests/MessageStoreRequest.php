@@ -6,6 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class MessageStoreRequest extends FormRequest
 {
+
+    protected $redirect = '/#contactDown';
+
     /**
      * Determine if the user is authorized to make this request.
      *

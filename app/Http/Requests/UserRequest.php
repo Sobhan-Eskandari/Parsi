@@ -27,8 +27,7 @@ class UserRequest extends FormRequest
             'name' => 'required',
             'email' => 'required|email',
             'old_password' => 'required',
-            'password' => 'required|min:6',
-            'password_confirmation' => 'confirmed',
+            'password' => 'confirmed',
         ];
     }
 
@@ -38,10 +37,10 @@ class UserRequest extends FormRequest
             'name.required' => 'وارد کردن نام اجباری است',
             'email.required' => 'وارد کردن ایمیل اجباری است',
             'email.email' => 'ایمیل وارد شده معتبر نمی باشد',
-            'password.required' => 'وارد کردن رمز عبور جدید اجباری است',
-            'old_password.required' => 'وارد کردن رمز عبور قبلی اجباری است',
-            'password.min' => 'رمز عبور باید حداقل 6 رقم باشد',
-            'password_confirmation.confirmed' => 'تایید رمز عبور با رمز عبور وارده شده مطابقت ندارد',
+//            'password.required' => 'وارد کردن رمز عبور جدید اجباری است',
+            'old_password.required' => 'برای ویرایش اطلاعات باید رمز عبور فعلی خود را وارد کنید',
+//            'password.min' => 'رمز عبور باید حداقل 6 رقم باشد',
+            'password.confirmed' => 'تایید رمز عبور با رمز عبور وارده شده مطابقت ندارد',
         ];
     }
 }

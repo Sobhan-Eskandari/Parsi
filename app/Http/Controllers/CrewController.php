@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Crew;
 use App\Http\Requests\CrewRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 class CrewController extends Controller
@@ -38,7 +39,15 @@ class CrewController extends Controller
      */
     public function store(CrewRequest $request)
     {
-        dd($request->all());
+        $input = $request->all();
+        if($file = $request->file('image')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        Crew::create($input);
+        Session::flash('created', 'کادر اجرایی جدید ساخته شد');
+        return redirect(route('crews.index'));
     }
 
     /**
@@ -60,7 +69,7 @@ class CrewController extends Controller
      */
     public function edit(Crew $crew)
     {
-        //
+        return view('pages.editStaff', compact('crew'));
     }
 
     /**
@@ -72,7 +81,18 @@ class CrewController extends Controller
      */
     public function update(Request $request, Crew $crew)
     {
-        //
+        $input = $request->all();
+        if($file = $request->file('image')){
+            if($crew->image){
+                File::delete('images/' . $crew->image);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        $crew->update($input);
+        Session::flash('edited', 'اطلاعات کادر اجرایی ویرایش شد');
+        return redirect(route('crews.index'));
     }
 
     /**
@@ -83,6 +103,9 @@ class CrewController extends Controller
      */
     public function destroy(Crew $crew)
     {
+        if($crew->image){
+            File::delete('images/' . $crew->image);
+        }
         $crew->delete();
         Session::flash('deleted', 'کادر اجرایی مورد نظر پاک شد');
         return redirect(route('crews.index'));

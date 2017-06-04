@@ -39,7 +39,7 @@
                         @component('components.postRowTable')
                             @slot('id') {{ $post->id }} @endslot
                             @slot('title') {{ $post->title }} @endslot
-                            @slot('body') {{ str_limit($post->body, 50) }} @endslot
+                            @slot('body') {{ str_limit(strip_tags($post->body), 50) }} @endslot
                             @slot('date') {{ $post->created_at->format('y/m/d') }} @endslot
                         @endcomponent
                     @endforeach

@@ -28,8 +28,10 @@
                 <br>
             @endif
         @endforeach
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-pag.css') }}" crossorigin="anonymous">
         <div class="row mt-5 justify-content-center pBox">
-            <nav aria-label="Page navigation example justify-content-center">
+            {{--<nav style="text-align: center;" aria-label="Page navigation example">--}}
+            <nav aria-label="Page navigation example justify-content-center" dir="rtl">
                 {{ $posts->links() }}
             </nav>
         </div>

@@ -1,6 +1,10 @@
 <tr>
     <td>
-        <img src="{{ asset('images/icone.png') }}" class="icone_user">
+        @if(strlen($photo) === 0)
+            <img src="{{ asset('images/icone.png') }}" alt="{{ $name }}" class="icone_user">
+        @else
+            <img src="{{ asset('images' . '/' . $photo) }}" alt="{{ $name }}" class="icone_user" style="border-radius: 50px;">
+        @endif
         {{ $name }}
     </td>
     <td>{{ $date }}</td>

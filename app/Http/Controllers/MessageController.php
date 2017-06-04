@@ -47,7 +47,7 @@ class MessageController extends Controller
         }else{
             Session::flash('deleted', 'پیام ارسال نشد');
         }
-        return redirect(route('home'));
+        return redirect('/#contactDown');
     }
 
     /**

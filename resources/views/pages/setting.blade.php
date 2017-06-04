@@ -20,12 +20,7 @@
                     {!! Form::text('site_title', null, ['id' => 'sendMessageInput', 'class' => 'form-control sendMessageInput', 'tabindex' => '1']) !!}
                 </div>
             </div>
-            <div class="col-lg-8 col-md-6 col-md-10 pull-right 2nd-upload-button">
-                <div class="custom-file-upload 2nd-upload-button">
-                    <!--<label for="file">File: </label>-->
-                    <input type="file" id="file" name="myfiles[]" multiple />
-                </div>
-            </div>
+
         </div>
         <div class="row">
             <div class="col-lg-7 col-xs-10 pull-right text-center">
@@ -86,8 +81,7 @@
             </div>
             <div class="col-lg-8 col-xs-12 pull-right">
                 <div class="custom-file-upload">
-                    <!--<label for="file">File: </label>-->
-                    <input type="file" id="file" name="myfiles[]" multiple />
+                    <input type="file" id="file" name="about_us_photo"/>
                 </div>
             </div>
         </div>

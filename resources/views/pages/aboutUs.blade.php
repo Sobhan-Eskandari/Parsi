@@ -8,7 +8,7 @@
 
     <div class="container-fluid px-0 pt-5">
         <br>
-        <img src="{{ asset('images/conf.png') }}" alt="" class="img-fluid third-header">
+        <img src="{{ asset('images/' . '/' . $info->about_us_photo) }}" alt="" class="img-fluid third-header">
     </div>
     {{--==========[ about conf ]========= --}}
     <div class="container aboutConf mb-5 pb-3 px-5 aboutUsBlogBox">
@@ -20,17 +20,14 @@
             <br>
             <div class="col-lg-9 col-xs-12 pr-lg-5">
                 <h4 class="mt-4 confTitleBlog">کنسرسیوم توسعه فناوری اطلاعات پارسی</h4>
-                <p class="mt-2 pl-lg-3">
-                    {{ $info->about_us }}
-                    {{--هاکاتوریسم یک ماراتن برنامه‌نویسی است که شرکت کنندگان در آن به صورت تیمی و یا انفرادی(توسعه‌دهنده)--}}
-                    {{--شرکت می‌کنند--}}
-                    {{--و از چهارشنبه تا جمعه عصر فرصت دارند تا با چالش‌های حوزه گردشگری که در ابتدای رویداد مطرح می‌شود،--}}
-                    {{--نرم‌افزار یا وب‌سایت خود را طراحی کنند. روز جمعه عصر هم داوران--}}
-                    {{--به بررسی کار تیم‌ها می‌پردازند و در مراسم اختتامیه برندگان معرفی می‌شوند.--}}
-                    {{--گر سابقه‌ی‌ فعالیت تیمی بر روی یک استارتاپ تحت وب و یا نرم‌افزار موبایلی اندرویدی / iOS را داشته‌اید--}}
-                    {{--و حتی علاقمند به شروع یک پروژه هستید، می‌توانید در این رویداد ثبت نام کنید.--}}
-
-                </p>
+                <p class="mt-2 pl-lg-3" id="toShowText"></p>
+                <p id="tohideText" hidden>{{ $info->about_us }}</p>
+                <script>
+                    $( document ).ready(function() {
+                        $('#toShowText').html($('#tohideText').text());
+                        $('#tohideText').css("display","none")
+                    });
+                </script>
             </div>
         </div>
     </div>

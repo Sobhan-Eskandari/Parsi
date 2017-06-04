@@ -30,8 +30,7 @@
         <div class="row">
             <div class="col-lg-11 col-md-6 col-md-11 pull-right">
                 <div class="custom-file-upload">
-                    <!--<label for="file">File: </label>-->
-                    <input type="file" id="file" name="myfiles[]" multiple />
+                    <input type="file" id="file" name="image"/>
                 </div>
             </div>
         </div>
@@ -60,6 +59,7 @@
                         @component('components.staffRowTable')
                             @slot('id') {{ $crew->id }} @endslot
                             @slot('name') {{ $crew->name }} @endslot
+                            @slot('photo') {{ $crew->image }} @endslot
                             @slot('date') {{ $crew->created_at->format('y/m/d') }} @endslot
                         @endcomponent
                     @endforeach

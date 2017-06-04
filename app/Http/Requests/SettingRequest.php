@@ -25,7 +25,7 @@ class SettingRequest extends FormRequest
     {
         return [
             'about_us' => 'required',
-            'about_us_photo' => 'required|image',
+            'about_us_photo' => 'image',
             'about_conference' => 'required',
             'about_event' => 'required',
             'address' => 'required',
@@ -34,7 +34,6 @@ class SettingRequest extends FormRequest
             'email' => 'required|email',
             'site_title' => 'required',
             'meta_description' => 'required',
-            'favicon' => 'image',
             'ticket_link' => 'url',
             'latitude' => 'required',
         ];
@@ -45,7 +44,7 @@ class SettingRequest extends FormRequest
         return [
             'ticket_link.url' => 'لینک وارد شده برای بلیط معتبر نیست',
             'about_us.required' => 'وارد کردن درباره ما اجباری است',
-            'about_us_photo.required' => 'وارد کردن تصویر درباره ما اجباری است',
+//            'about_us_photo.required' => 'وارد کردن تصویر درباره ما اجباری است',
             'about_us_photo.image' => 'فایل وارد شده برای درباره ما تصویر نمی باشد',
             'about_conference.required' => 'وارد کردن درباره همایش اجباری است',
             'about_event.required' => 'وارد کردن درباره رویداد اجباری است',
@@ -58,7 +57,6 @@ class SettingRequest extends FormRequest
             'email.email' => 'ایمیل وارد شده معتبر نمی باشد',
             'site_title.required' => 'وارد کردن عنوان سایت اجباری می باشد',
             'meta_description.required' => 'وارد کردن متاداده اجباری است',
-            'favicon.image' => 'فایل وارد شده برای فوآیکون تصویر نمی باشد',
             'latitude.required' => 'وارد کردن محل همایش روی نقشه اجباری است',
         ];
     }

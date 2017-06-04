@@ -48,7 +48,7 @@
         <div class="row">
             <div class="col-lg-11 col-md-6 col-md-12 pull-right">
                 <div class="custom-file-upload">
-                    <input type="file" id="file" name="myfiles[]" multiple />
+                    <input type="file" id="file" name="image"/>
                 </div>
             </div>
 
@@ -83,7 +83,7 @@
                             @slot('id') {{ $lecturer->id }} @endslot
                             @slot('name') {{ $lecturer->name }} @endslot
                             @slot('profession') {{ $lecturer->profession }} @endslot
-{{--                            @slot('desc') {{ str_limit($lecturer->desc, 50) }} @endslot--}}
+                            @slot('photo') {{ $lecturer->image }} @endslot
                             @slot('date') {{ $lecturer->created_at->format('y/m/d') }} @endslot
                         @endcomponent
                     @endforeach

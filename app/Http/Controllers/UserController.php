@@ -77,11 +77,20 @@ class UserController extends Controller
         $input = $request->all();
         $user = Auth::user();
         $current_password = Auth::user()->password;
+        $check = Hash::check($input['old_password'], $current_password);
 
-        if(Hash::check($input['old_password'], $current_password)) {
-            $input['password'] = bcrypt($request->password);
+        if(!is_null($input['password']) && $check) {
+            if(strlen($input['password']) < 6){
+                Session::flash('deleted', 'رمز عبور باید حداقل 6 حرف باشد');
+            }else{
+                $input['password'] = bcrypt($request->password);
+                $user->update($input);
+                Session::flash('created', 'اطلاعات شما ویرایش شد و رمز عبور شما تغییر کرد');
+            }
+        }elseif(is_null($input['password']) && $check){
+            $input = $request->except('password');
             $user->update($input);
-            Session::flash('created', 'رمز عبور شما تغییر کرد');
+            Session::flash('created', 'اطلاعات شما ویرایش شد');
         }else{
             Session::flash('deleted', 'رمز عبور فعلی اشتباه است');
         }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LecturerRequest;
 use App\Lecturer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 
 class LecturerController extends Controller
@@ -38,7 +39,15 @@ class LecturerController extends Controller
      */
     public function store(LecturerRequest $request)
     {
-        dd($request->all());
+        $input = $request->all();
+        if($file = $request->file('image')){
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        Lecturer::create($input);
+        Session::flash('created', 'سخنران جدید اضافه شد');
+        return redirect(route('lecturers.index'));
     }
 
     /**
@@ -60,7 +69,7 @@ class LecturerController extends Controller
      */
     public function edit(Lecturer $lecturer)
     {
-        //
+        return view('pages.editLecturer', compact('lecturer'));
     }
 
     /**
@@ -70,9 +79,20 @@ class LecturerController extends Controller
      * @param  \App\Lecturer  $lecturer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lecturer $lecturer)
+    public function update(LecturerRequest $request, Lecturer $lecturer)
     {
-        //
+        $input = $request->all();
+        if($file = $request->file('image')){
+            if($lecturer->image){
+                File::delete('images/' . $lecturer->image);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['image'] = $name;
+        }
+        $lecturer->update($input);
+        Session::flash('edited', 'اطلاعات سخنران ویرایش شد');
+        return redirect(route('lecturers.index'));
     }
 
     /**
@@ -83,6 +103,9 @@ class LecturerController extends Controller
      */
     public function destroy(Lecturer $lecturer)
     {
+        if($lecturer->image){
+            File::delete('images/' . $lecturer->image);
+        }
         $lecturer->delete();
         Session::flash('deleted', 'سخنران مورد نظر پاک شد');
         return redirect(route('lecturers.index'));

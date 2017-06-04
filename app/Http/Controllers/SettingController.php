@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SettingRequest;
 use App\Setting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 class SettingController extends Controller
 {
@@ -71,7 +73,22 @@ class SettingController extends Controller
      */
     public function update(SettingRequest $request, Setting $setting)
     {
-        dd($request->all());
+        $input = $request->all();
+
+        if($file = $request->file('about_us_photo')){
+            if($setting->about_us_photo){
+                File::delete('images/' . $setting->about_us_photo);
+            }
+            $name = time() . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['about_us_photo'] = $name;
+        }
+
+        $setting->update($input);
+
+        Session::flash('edited', 'تنظیمات جدید اعمال شد');
+
+        return redirect(route('settings.index'));
     }
 
     /**

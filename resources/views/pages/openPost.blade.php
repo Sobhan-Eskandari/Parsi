@@ -9,8 +9,11 @@
     <div class="container-fluid openPost mt-5 pt-5">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-sm-8">
-                <img src="{{ asset('images/post-image.png') }}" class="img-fluid" width="674.5px">
-
+                @if(strlen($post->image) === 0)
+                    <img src="{{ asset('images/java.jpg') }}" class="img-fluid" width="674.5px" alt="{{ $post->title }}">
+                @else
+                    <img src="{{ asset('images' . '/' . $post->image) }}" class="img-fluid" width="674.5px" alt="{{ $post->title }}">
+                @endif
             </div>
         </div>
         <br>
@@ -46,7 +49,7 @@
                     <div class="col px-3">
                         <div class="row justify-content-start">
                             <div class="col-2 px-0">
-                                <a href="http://www.facebook.com/sharer.php?u=http://parsi.dev/blog/{{ $post->id }}/بلاگ"><img src="{{ asset('images/facebook.png') }}"
+                                <a href="http://www.facebook.com/sharer.php?u=http://parsi.dev/blog/{{ $post->id }}"><img src="{{ asset('images/facebook.png') }}"
                                                 alt="در حال بارگذاری" width="40px" height="40px" class="img-fluid"></a>
                             </div>
                             <div class="col-2 px-0">

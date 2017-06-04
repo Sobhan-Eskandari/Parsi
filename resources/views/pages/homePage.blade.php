@@ -238,7 +238,7 @@
                     @slot('photo') {{ $lecturer->image }} @endslot
                     @slot('name') {{ $lecturer->name }} @endslot
                     @slot('profession') {{ $lecturer->profession }} @endslot
-                    @slot('desc') {{ $lecturer->desc }} @endslot
+                    @slot('desc') {{ strip_tags($lecturer->desc) }} @endslot
                 @endcomponent
             </div>
         @if($loop->last || $loop->iteration % 3 === 0)
@@ -346,7 +346,10 @@
 <div class="container-fluid px-0 contactWithUs py-5">
     <h4 class="text-center">تماس با ما</h4>
     <hr>
-    <div class="container">
+    @component('components.errors') @endcomponent
+
+    @component('components.flash') @endcomponent
+    <div class="containe/r">
         {!! Form::open(['method'=>'POST', 'action'=>'MessageController@store']) !!}
             <div class="row justify-content-center  mt-5">
                 <div class="col-8">
