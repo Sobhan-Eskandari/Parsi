@@ -10,7 +10,12 @@
         <br><br>
         <div class="row margin_right_2nd_title">
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-left">
+
                 <a href="{{ route('posts.create') }}"><button class="btn adv_btn pull-left">ایجاد پست&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></button></a>
+
+                <button class="btn adv_btn pull-left"><a href="/makePost">ایجاد پست&nbsp;</a><i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+
             </div>
             <div class="col-md-3 col-md-offset-0 col-xs-6 pull-right">
                 <h4 class="list_title">لیست پست ها</h4>

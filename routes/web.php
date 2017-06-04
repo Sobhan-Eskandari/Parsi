@@ -18,6 +18,7 @@ Route::get('/blogPng', function () {
     return view('pages.blogPng');
 });
 
+
 Route::get('/', 'HomeController@index')->name('home');
 
 //Route::group(['middleware' => 'auth'], function (){
@@ -38,3 +39,8 @@ Route::get('/', 'HomeController@index')->name('home');
 //});
 
 Route::post('/messages', 'MessageController@store')->name('messages.store');
+
+Route::get('/test', function () {
+    return view('pages.test');
+});
+
