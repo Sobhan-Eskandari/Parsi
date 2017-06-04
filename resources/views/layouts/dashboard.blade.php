@@ -17,6 +17,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('Resources/css-old/Font/font-awesome.min.css') }}">
     {{--<link rel="stylesheet" href="{{ asset('Resources/css/Font/fontiran.css') }}">--}}
+    <script src="https://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
 </head>
 <body>
 <div class="container-fluid height_vh">
@@ -49,18 +50,25 @@
         <!--sideBar-->
         <div class="col-xs-2 admin_sidebar pull-right">
             <h5 class="zhenic_title">همایش</h5>
-            <h5 class="admin_side_title"><i class="fa fa-file-text-o set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">پست ها</span></h5>
-            <h5 class="admin_side_title"><i class="fa fa-address-card set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">سخنرانان</span></h5>
-            <h5 class="admin_side_title"><i class="fa fa-address-book set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">کادر اجرایی</span> @yield('badge')</h5>
-            <h5 class="admin_side_title"><i class="fa fa-comments set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">پیام ها</span></h5>
-            <h5 class="admin_side_title"><i class="fa fa-user set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">پروفایل ادمین</span></h5>
-            <h5 class="admin_side_title"><i class="fa fa-cogs set_fa pull-right" aria-hidden="true"></i><span
-                        class="hidden-xs">تنظیمات</span></h5></div>
+            <a href="/posts"><h5 class="admin_side_title"><i class="fa fa-file-text-o set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">پست ها</span></h5></a>
+            <a href="/speakers"><h5 class="admin_side_title"><i class="fa fa-address-card set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">سخنرانان</span></h5></a>
+            <a href="/staff"><h5 class="admin_side_title"><i class="fa fa-address-book set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">کادر اجرایی</span> @yield('badge')</h5></a>
+            <a href="/pms"><h5 class="admin_side_title"><i class="fa fa-comments set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">پیام ها</span></h5></a>
+            <a href="/adminProfile"><h5 class="admin_side_title"><i class="fa fa-user set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">پروفایل ادمین</span></h5></a>
+            <a href="/setting"><h5 class="admin_side_title"><i class="fa fa-cogs set_fa pull-right"
+                                                       aria-hidden="true"></i><span
+                            class="hidden-xs">تنظیمات</span></h5></a>
+        </div>
     </div>
 </div>
 

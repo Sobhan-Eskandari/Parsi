@@ -68,3 +68,6 @@ Route::get('/openPost', function () {
 Route::get('/blogPng', function () {
     return view('pages.blogPng');
 });
+Route::get('/test', function () {
+    return view('pages.test');
+});

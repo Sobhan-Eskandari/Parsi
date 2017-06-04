@@ -30,17 +30,18 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-lg-1 col-md-6 col-md-10 pull-right">
-                <button class="btn conf_button_upload" type="button">آپلود عکس</button>
+            <div class="col-lg-11 col-md-6 col-md-12 pull-right">
+                <div class="custom-file-upload">
+                    <!--<label for="file">File: </label>-->
+                    <input type="file" id="file" name="myfiles[]" multiple />
+                </div>
             </div>
-            <div class="col-lg-4 col-md-10 col-md-10 col-sm-10 col-xs-10 pull-right conf_button_upload_box">
-                <button class="btn conf_button_upload_inside pull-right" type="button"></button>
-            </div>
+
         </div>
         <br>
         <div class="row">
             <div class="col-lg-1 col-md-6 col-md-10 pull-right">
-                <button class="btn conf_button_upload ch-co-btn" type="button">تایید</button>
+                <button class="btn conf_button_upload ch-co-btn" type="submit">تایید</button>
             </div>
         </div>
         <br>
