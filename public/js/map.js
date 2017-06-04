@@ -1,13 +1,19 @@
 function myMap() {
-    var myCenter = new google.maps.LatLng(37.062914807102906,50.423115491867065);
-    var mapCanvas = document.getElementById("map");
-    var mapOptions =
+
+    let myCenter = new google.maps.LatLng(37.062914807102906,50.423115491867065);
+    let mapCanvas = document.getElementById("map");
+    let mapOptions =
         {
             center: myCenter,
             zoom: 12,
             scrollwheel: false
         };
-    var map = new google.maps.Map(mapCanvas, mapOptions);
+    let map = new google.maps.Map(mapCanvas, mapOptions);
+
+    let marker = new google.maps.Marker({
+        position: place,
+        map: map
+    });
 
     $('#addMarker').click(function (event) {
         event.preventDefault();

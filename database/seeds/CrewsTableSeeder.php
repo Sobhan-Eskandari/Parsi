@@ -19,7 +19,7 @@ class CrewsTableSeeder extends Seeder
         $crews = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 20) as $index){
+        foreach (range(1, 10) as $index){
             $crews[] = [
                 'name' => $faker->firstName,
                 'created_at' => $time,

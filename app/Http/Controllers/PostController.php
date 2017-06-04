@@ -17,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::orderByRaw('created_at desc')->paginate(10);
-        return view('pages.posts', compact('posts', 'site_title'));
+        return view('pages.posts', compact('posts'));
     }
 
     /**

@@ -1,43 +1,22 @@
 $(document).ready(function () {
-    $('.admin_side_title').click(function () {
-        $(this).addClass('active').siblings().removeClass('active');
-    });
-});
-
-$(document).ready(function () {
     $('li.activate_pag').click(function () {
         $(this).addClass('active').siblings().removeClass('active');
     });
 });
 
-
-//////////////////////
-
-function myMap() {
-    var myCenter = new google.maps.LatLng(37.062914807102906, 50.423115491867065);
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {center: myCenter, zoom: 12};
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    marker = new google.maps.Marker({
-        position: myCenter,
-        map: map
-    });
-}
-
-///////////////////////////////////
 //Reference:
 //https://www.onextrapixel.com/2012/12/10/how-to-create-a-custom-file-input-with-jquery-css3-and-php/
-;(function ($) {
+(function ($) {
 
     // Browser supports HTML5 multiple file?
-    var multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
+    let multipleSupport = typeof $('<input/>')[0].multiple !== 'undefined',
         isIE = /msie/i.test(navigator.userAgent);
 
     $.fn.customFile = function () {
 
         return this.each(function () {
 
-            var $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
+            let $file = $(this).addClass('custom-file-upload-hidden'), // the original file input
                 $wrap = $('<div class="file-upload-wrapper">'),
                 $input = $('<input type="text" class="file-upload-input" />'),
                 // Button that will be used in non-IE browsers
@@ -66,13 +45,13 @@ function myMap() {
 
             $file.change(function () {
 
-                var files = [], fileArr, filename;
+                let files = [], fileArr, filename;
 
                 // If multiple is supported then extract
                 // all filenames from the file array
                 if (multipleSupport) {
                     fileArr = $file[0].files;
-                    for (var i = 0, len = fileArr.length; i < len; i++) {
+                    for (let i = 0, len = fileArr.length; i < len; i++) {
                         files.push(fileArr[i].name);
                     }
                     filename = files.join(', ');
@@ -121,7 +100,7 @@ function myMap() {
     if (!multipleSupport) {
         $(document).on('change', 'input.customfile', function () {
 
-            var $this = $(this),
+            let $this = $(this),
                 // Create a unique ID so we
                 // can attach the label to the input
                 uniqId = 'customfile_' + (new Date()).getTime(),

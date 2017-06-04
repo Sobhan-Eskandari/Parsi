@@ -2,23 +2,6 @@
 
 Auth::routes();
 
-Route::get('/blog', function () {
-    return view('layouts.blog');
-});
-
-Route::get('/aboutUs', function () {
-    return view('pages.aboutUs');
-});
-
-Route::get('/openPost', function () {
-    return view('pages.openPost');
-});
-
-Route::get('/blogPng', function () {
-    return view('pages.blogPng');
-});
-
-
 Route::get('/', 'HomeController@index')->name('home');
 
 //Route::group(['middleware' => 'auth'], function (){
@@ -40,7 +23,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::post('/messages', 'MessageController@store')->name('messages.store');
 
-Route::get('/test', function () {
-    return view('pages.test');
-});
+Route::get('/blog', 'HomeController@allPosts')->name('posts.all');
+Route::get('/blog/{post}', 'HomeController@showPost')->name('show_post');
 
+Route::get('/about_us', 'HomeController@about_us')->name('about_us');

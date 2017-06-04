@@ -20,7 +20,7 @@ class UsersTableSeeder extends Seeder
         $users = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 20) as $index){
+        foreach (range(1, 10) as $index){
             $users[] = [
                 'name'=>$faker->name,
                 'email'=>$faker->unique()->email,

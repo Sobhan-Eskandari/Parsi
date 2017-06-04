@@ -4,6 +4,10 @@
 @endsection
 @section('content')
 
+    @component('components.errors') @endcomponent
+
+    @component('components.flash') @endcomponent
+
     {!! Form::model($setting , ['method'=>'PUT', 'action'=>['SettingController@update', $setting->id], 'files' => true]) !!}
 
         <div class="confSettingBox">
@@ -146,31 +150,23 @@
             <div class="col-xs-5">
                 <div class="row">
                     <div class="form-group pull-right">
-                        {!! Form::text('latitude', null, ['id'=>'lat', 'class'=>'form-control inputWidth', 'style' => 'display:none']) !!}
+                        {!! Form::text('latitude', null, ['id'=>'lat', 'class'=>'form-control inputWidth', 'style' => 'display:none', 'readonly']) !!}
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="form-group pull-right">
-                        {!! Form::text('longitude', null, ['id'=>'lng', 'class'=>'form-control inputWidth', 'style' => 'display:none']) !!}
+                        {!! Form::text('longitude', null, ['id'=>'lng', 'class'=>'form-control inputWidth', 'style' => 'display:none', 'readonly']) !!}
                     </div>
                 </div>
 
                 <div class="row">&nbsp;</div>
                 <div class="row">
-                    @if(!is_null($setting->latitude))
-                        <button class="btn add_btn" id="addMarker" style="display: none">اضافه کردن به نقشه</button>
-                    @else
-                        <button class="btn add_btn" id="addMarker">اضافه کردن به نقشه</button>
-                    @endif
+                    <button class="btn add_btn" id="addMarker" style="display: none">اضافه کردن به نقشه</button>
                 </div>
                 <br>
                 <div class="row">
-                    @if(is_null($setting->latitude))
-                        <button class="btn remove_btn" id="deleteMarker" style="display: none">حذف کردن از نقشه</button>
-                    @else
-                        <button class="btn remove_btn" id="deleteMarker">حذف کردن از نقشه</button>
-                    @endif
+                    <button class="btn remove_btn" id="deleteMarker">حذف کردن از نقشه</button>
                 </div>
             </div>
         </div>
@@ -187,18 +183,61 @@
 @endsection
 
 @section('map')
-    {{--<script>--}}
+    <script>
 
-        {{--var myCenter = new google.maps.LatLng(37.062914807102906,50.423115491867065);--}}
-        {{--var mapCanvas = document.getElementById("map");--}}
-        {{--var mapOptions = {center: myCenter, zoom: 12};--}}
-        {{--var map = new google.maps.Map(mapCanvas, mapOptions);--}}
-        {{--marker = new google.maps.Marker({--}}
-            {{--position: myCenter,--}}
-            {{--map: map--}}
-        {{--});--}}
-    {{--</script>--}}
-    <script src="{{ asset('js/map.js') }}"></script>
+        let lat = $('[name="latitude"]').val();
+        let lng = $('[name="longitude"]').val();
+        if(lat === ''){
+            $('#addMarker').show();
+            $('#deleteMarker').hide();
+        }
+
+        function myMap() {
+            let place = new google.maps.LatLng(lat ,lng);
+            let myCenter = new google.maps.LatLng(37.062914807102906,50.423115491867065);
+            let mapCanvas = document.getElementById("map");
+            let mapOptions =
+                {
+                    center: myCenter,
+                    zoom: 12,
+                    scrollwheel: false
+                };
+            let map = new google.maps.Map(mapCanvas, mapOptions);
+
+            let marker = new google.maps.Marker({
+                position: place,
+                map: map
+            });
+
+            $('#addMarker').click(function (event) {
+                event.preventDefault();
+                $('#addMarker').hide();
+                $('#deleteMarker').show();
+                google.maps.event.addListener(map, 'click', function(event) {
+                    placeMarker(event.latLng);
+                    google.maps.event.clearListeners(map, 'click');
+                });
+            });
+
+            $('#deleteMarker').click(function (event) {
+                event.preventDefault();
+                $('#deleteMarker').hide();
+                $('#addMarker').show();
+                $('#lat').val('');
+                $('#lng').val('');
+                marker.setMap(null);
+            });
+
+            function placeMarker(location) {
+                $('#lat').val(location.lat());
+                $('#lng').val(location.lng());
+                marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+            }
+        }
+    </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJXj14jwwsgwA1DeIRMY5jBiRwT_byxVs&callback=myMap"></script>
 @endsection
 
