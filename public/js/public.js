@@ -1,20 +1,10 @@
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
-function myMap() {
-    var myCenter = new google.maps.LatLng(37.062914807102906,50.423115491867065);
-    var mapCanvas = document.getElementById("map");
-    var mapOptions = {center: myCenter, zoom: 12};
-    var map = new google.maps.Map(mapCanvas, mapOptions);
-    marker = new google.maps.Marker({
-        position: myCenter,
-        map: map
-    });
-}
 
 $(document).ready(function(){
     $(window).scroll(function(){
-        var scroll = $(window).scrollTop();
+        let scroll = $(window).scrollTop();
         if (scroll > 150) {
             $(".backScrollColor").css("background" , "#333");
         }
@@ -27,11 +17,11 @@ $(document).ready(function(){
 ///////////////////////////////////////////
 
 function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    let t = Date.parse(endtime) - Date.parse(new Date());
+    let seconds = Math.floor((t / 1000) % 60);
+    let minutes = Math.floor((t / 1000 / 60) % 60);
+    let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    let days = Math.floor(t / (1000 * 60 * 60 * 24));
     return {
         'total': t,
         'days': days,
@@ -42,14 +32,14 @@ function getTimeRemaining(endtime) {
 }
 
 function initializeClock(id, endtime) {
-    var clock = document.getElementById(id);
-    var daysSpan = clock.querySelector('.days');
-    var hoursSpan = clock.querySelector('.hours');
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
+    let clock = document.getElementById(id);
+    let daysSpan = clock.querySelector('.days');
+    let hoursSpan = clock.querySelector('.hours');
+    let minutesSpan = clock.querySelector('.minutes');
+    let secondsSpan = clock.querySelector('.seconds');
 
     function updateClock() {
-        var t = getTimeRemaining(endtime);
+        let t = getTimeRemaining(endtime);
 
         daysSpan.innerHTML = t.days;
         hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
@@ -62,10 +52,10 @@ function initializeClock(id, endtime) {
     }
 
     updateClock();
-    var timeinterval = setInterval(updateClock, 1000);
+    let timeinterval = setInterval(updateClock, 1000);
 }
 
-var deadline = 'Wed Sep 06 2017 14:00:00 GMT+0430 (Iran Daylight Time)';
+let deadline = 'Wed Sep 06 2017 14:00:00 GMT+0430 (Iran Daylight Time)';
 
 initializeClock('clockdiv', deadline);
 

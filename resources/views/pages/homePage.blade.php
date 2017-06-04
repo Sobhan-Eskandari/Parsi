@@ -5,10 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Conferences</title>
+    <meta name="description" content="{{ $info->meta_description }}">
+    <title>{{ $info->site_title }} | خانه</title>
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{ asset('Resources/css/Bootstrap/bootstrap.min.css') }}">
-
+    <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="{{ asset('css/application.css') }}">
 
@@ -29,7 +30,7 @@
                         aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand mr-lg-4 pr-lg-5" href="#">
+                <a class="navbar-brand mr-lg-4 pr-lg-5" href="/">
                     <span><img src="{{ asset('images/parsi.png') }}" alt="در حال بارگذاری" height="50px"
                                width="55px"></span>
                     کنسرسیوم پارسی
@@ -50,20 +51,20 @@
                             <a class="nav-link" href="#speakerDown">سخنرانان</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/blogPng">بلاگ</a>
+                            <a class="nav-link" href="{{ route('posts.all') }}">بلاگ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#supporterDown">حامیان</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/aboutUs">درباره ما</a>
+                            <a class="nav-link" href="{{ route('about_us') }}">درباره ما</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contactDown">تماس با ما</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0 pl-lg-5 ml-lg-4">
-                        <a href="#"><button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="button">تهیه بلیط</button></a>
+                        <a href="{{ $info->ticket_link }}"><button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="button">تهیه بلیط</button></a>
                     </form>
                 </div>
             </nav>
@@ -106,7 +107,7 @@
                 </div>
                 <div class="col-6 px-0">
                     <h5 class="text-center header_address px-0">
-                        گیلان-کلاچای-واجارگاه-دانشکده فنی مهندسی شرق گیلان
+                        {{ $info->address }}
                     </h5>
                 </div>
                 <div class="col-2">
@@ -128,20 +129,20 @@
         <br>
         <div class="col-lg-9 col-xs-12 pr-lg-5">
             <h5>درباره همایش</h5>
-            <p class="mt-4 pl-lg-3">
-                هاکاتوریسم یک ماراتن برنامه‌نویسی است که شرکت کنندگان در آن به صورت تیمی و یا انفرادی(توسعه‌دهنده)
-                شرکت می‌کنند
-                و از چهارشنبه تا جمعه عصر فرصت دارند تا با چالش‌های حوزه گردشگری که در ابتدای رویداد مطرح می‌شود،
-                نرم‌افزار یا وب‌سایت خود را طراحی کنند. روز جمعه عصر هم داوران
-                به بررسی کار تیم‌ها می‌پردازند و در مراسم اختتامیه برندگان معرفی می‌شوند.
-                گر سابقه‌ی‌ فعالیت تیمی بر روی یک استارتاپ تحت وب و یا نرم‌افزار موبایلی اندرویدی / iOS را داشته‌اید
-                و حتی علاقمند به شروع یک پروژه هستید، می‌توانید در این رویداد ثبت نام کنید.
 
-            </p>
+            <p class="mt-4 pl-lg-3" id="toShowConf"></p>
+            <p id="tohideConf" hidden>{{ $info->about_conference }}</p>
+            <script>
+                $( document ).ready(function() {
+                    $('#toShowConf').html($('#tohideConf').text());
+                    $('#tohideConf').css("display","none")
+                });
+            </script>
+
             <div class="row">
                 <div class="col-12 mt-3 px-sm-0" id="aboutEventDown">
-                    <button type="button" class="btn btn-primary my-1">تهیه بلیط</button>
-                    <button type="button" class="btn btn-outline-success mr-lg-5 my-1">اطلاعات بیشتر</button>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary my-1">تهیه بلیط</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success mr-lg-5 my-1">اطلاعات بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -160,18 +161,14 @@
 <div class="container-fluid blackBackAboutConf py-5">
     <div class="row justify-content-center">
         <div class="col-9">
-            <p class="text-center mt-5">
-                هاکاتوریسم یک ماراتن برنامه‌نویسی است که شرکت کنندگان در آن به صورت تیمی و یا انفرادی(توسعه‌دهنده)
-                شرکت می‌کنند
-                و از چهارشنبه تا جمعه عصر فرصت دارند تا با چالش‌های حوزه گردشگری که در ابتدای رویداد مطرح می‌شود،
-                نرم‌افزار یا وب‌سایت خود را طراحی کنند. روز جمعه عصر هم داوران به بررسی کار تیم‌ها می‌پردازند و در
-                مراسم
-                اختتامیه برندگان معرفی می‌شوند.
-                اگر سابقه‌ی‌ فعالیت تیمی بر روی یک استارتاپ تحت وب و یا نرم‌افزار موبایلی اندرویدی / iOS را
-                داشته‌اید
-                و حتی علاقمند به شروع یک پروژه هستید، می‌توانید در این رویداد ثبت نام کنید.
-
-            </p>
+            <p class="text-center mt-5" id="toShowText"></p>
+            <p id="tohideText" hidden>{{ $info->about_event }}</p>
+            <script>
+                $( document ).ready(function() {
+                    $('#toShowText').html($('#tohideText').text());
+                    $('#tohideText').css("display","none")
+                });
+            </script>
         </div>
     </div>
     <br>
@@ -179,10 +176,10 @@
         <div class="col-3">
             <div class="row  justify-content-center">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1">
-                    <button type="button" class="btn btn-primary">تهیه بلیط</button>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary">تهیه بلیط</button></a>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1" id="presentDown">
-                    <button type="button" class="btn btn-outline-success">اطلاعات بیشتر</button>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success">اطلاعات بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -220,7 +217,7 @@
                     <p>همایش بزرگ از ایده تا اجرا دانشکده فنی شرق گیلان</p>
                 </div>
                 <div class="col-lg-4 col-sm-12 pr-lg-5 pt-lg-0 pt-sm-3">
-                    <button type="button" class="btn btn-primary mr-lg-5">تهیه بلیط</button>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary mr-lg-5">تهیه بلیط</button></a>
                 </div>
             </div>
         </div>
@@ -231,34 +228,23 @@
 <div class="container speakerConf">
     <h4 class="text-center mt-5">سخنرانان همایش</h4>
     <hr>
-    <div class="row mt-5 pt-4">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-    </div>
-    <div class="row mt-5 pt-4 pb-4">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            @component('components.speakers')
-            @endcomponent
-        </div>
-    </div>
+
+    @foreach($lecturers as $lecturer)
+        @if($loop->first || $loop->iteration % 3 === 1)
+            <div class="row mt-5 pt-4 pb-4">
+        @endif
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                @component('components.speakers')
+                    @slot('photo') {{ $lecturer->image }} @endslot
+                    @slot('name') {{ $lecturer->name }} @endslot
+                    @slot('profession') {{ $lecturer->profession }} @endslot
+                    @slot('desc') {{ $lecturer->desc }} @endslot
+                @endcomponent
+            </div>
+        @if($loop->last || $loop->iteration % 3 === 0)
+            </div>
+        @endif
+    @endforeach
 </div>
 <hr class="separate_hr">
 <br>
@@ -267,10 +253,12 @@
     <h4 class="text-center mt-2">کادر اجرایی</h4>
     <hr>
     <div class="row justify-content-center mt-5 mb-5 pb-4">
-        @for ($i = 0; $i < 8; $i++)
+        @foreach($crews as $crew)
             @component('components.executiveCadre')
+                @slot('photo') {{ $crew->image }} @endslot
+                @slot('name') {{ $crew->name }} @endslot
             @endcomponent
-        @endfor
+        @endforeach
     </div>
 </div>
 {{--==========[ latest news ]========= --}}
@@ -280,18 +268,21 @@
         <hr>
         <div class="container">
             <div class="row justify-content-center mt-5 pt-3">
-                @for ($i = 0; $i < 4; $i++)
+                @foreach($posts as $post)
                     @component('components.java')
-                        @slot('style')
-                        @endslot
+                        @slot('style') @endslot
+                        @slot('id') {{ $post->id }} @endslot
+                        @slot('photo') {{ $post->image }} @endslot
+                        @slot('title') {{ $post->title }} @endslot
+                        @slot('date') {{ $post->created_at->format('y/m/d') }} @endslot
                     @endcomponent
-                @endfor
+                @endforeach
             </div>
         </div>
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4 mt-5 text-center" id="supporterDown">
-                    <button type="button" class="btn btn-primary">مشاهده بیشتر</button>
+                    <a href="{{ route('posts.all') }}"><button type="button" class="btn btn-primary">مشاهده بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -392,16 +383,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center mt-4">
-                <a href="#"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                <a href="{{ $info->instagram }}"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
                 &nbsp;&nbsp;&nbsp;
-                <a href="#"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
+                <a href="{{ $info->telegram }}"><i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i></a>
             </div>
         </div>
     </div>
 </div>
 {{--==========[ strip ]========= --}}
 <div class="container-fluid strip pt-3 pb-2">
-    <h6 class="text-center">طراحی شده توسط تیم حروف نگار-کنسرسیوم پارسی-1396</h6>
+    <h6 class="text-center">طراحی شده توسط تیم حروف نگار - کنسرسیوم پارسی - {{  jDate::forge('now')->format('Y') }}</h6>
 </div>
 
 
@@ -411,6 +402,22 @@
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
+<script>
+    function myMap() {
+        let myCenter = new google.maps.LatLng({{ $info->latitude }} + 0, {{ $info->longitude }} + 0);
+        let mapCanvas = document.getElementById("map");
+        let mapOptions = {
+            center: myCenter,
+            zoom: 12,
+            scrollwheel: false
+        };
+        let map = new google.maps.Map(mapCanvas, mapOptions);
+        marker = new google.maps.Marker({
+            position: myCenter,
+            map: map
+        });
+    }
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJXj14jwwsgwA1DeIRMY5jBiRwT_byxVs&callback=myMap"></script>
 </body>
 </html>

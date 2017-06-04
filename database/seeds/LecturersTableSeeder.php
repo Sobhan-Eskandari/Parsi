@@ -20,7 +20,7 @@ class LecturersTableSeeder extends Seeder
         $lecturers = [];
         $time = jDate::forge('now')->format('datetime', true);
 
-        foreach (range(1, 50) as $index){
+        foreach (range(1, 5) as $index){
             $lecturers[] = [
                 'name' => $faker->name,
                 'profession' => $faker->company,
