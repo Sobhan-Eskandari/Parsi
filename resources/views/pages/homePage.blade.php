@@ -349,16 +349,16 @@
     @component('components.errors') @endcomponent
 
     @component('components.flash') @endcomponent
-    <div class="containe/r">
+    <div class="container">
         {!! Form::open(['method'=>'POST', 'action'=>'MessageController@store']) !!}
             <div class="row justify-content-center  mt-5">
                 <div class="col-8">
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-md-6 col-sm-12 pl-lg-5 py-1">
-                            <input name="name" type="text" class="form-control" placeholder="نام شما" tabindex="1">
+                            {!! Form::text('name', null, ['class' => 'form-control', 'tabindex' => '1', 'placeholder' => 'نام شما']) !!}
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-12 pr-lg-5 py-1">
-                            <input name="email" type="email" class="form-control" placeholder="ایمیل شما" tabindex="2">
+                            {!! Form::email('email', null, ['class' => 'form-control', 'tabindex' => '2', 'placeholder' => 'ایمیل شما']) !!}
                         </div>
                     </div>
                 </div>
@@ -366,7 +366,7 @@
             <div class="row justify-content-center">
                 <div class="col-8">
                     <div class="form-group pt-4">
-                        <textarea name="message" class="form-control" rows="10" tabindex="3" placeholder="متن پیام"></textarea>
+                        {!! Form::textarea('message', null, ['class' => 'form-control', 'rows' => '10', 'tabindex' => '3', 'placeholder' => 'متن پیام']) !!}
                     </div>
                 </div>
             </div>
