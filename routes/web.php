@@ -31,3 +31,7 @@ Route::get('/blog', 'HomeController@allPosts')->name('posts.all');
 Route::get('/blog/{post}', 'HomeController@showPost')->name('show_post');
 
 Route::get('/about_us', 'HomeController@about_us')->name('about_us');
+
+Route::get('/loginPage', function () {
+    return view('pages.loginPage');
+});
