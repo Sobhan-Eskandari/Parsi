@@ -1,9 +1,5 @@
 <?php
 
-//Auth::routes();
-
-use App\Setting;
-
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
@@ -33,8 +29,3 @@ Route::get('/blog', 'HomeController@allPosts')->name('posts.all');
 Route::get('/blog/{post}', 'HomeController@showPost')->name('show_post');
 
 Route::get('/about_us', 'HomeController@about_us')->name('about_us');
-
-Route::get('/loginPage', function () {
-    $info = Setting::findOrFail(1);
-    return view('pages.loginPage', compact('info'));
-});
