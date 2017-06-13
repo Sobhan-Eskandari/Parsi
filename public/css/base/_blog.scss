@@ -79,3 +79,209 @@ color: white;
 .aboutUsBlogBox_backColor{
   background-color: #eee;
 }
+/* ============[ login ]=========== */
+.login{
+  .account_title{
+    color: #232323;
+  }
+  .input_boxing{
+    padding-right: 15%;
+    padding-left: 15%;
+  }
+  #inputNamel{
+    border-radius: 0;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  #inputPass{
+    border-radius: 0;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+  }
+  input[type="text"].inputNamel::-webkit-input-placeholder {
+    color: #252525;
+    font-size: 1.25vw;
+    text-align: right;
+  }
+  input[type="text"].inputNamel::-moz-placeholder {
+    color: #252525;
+    font-size: 1.25vw;
+    text-align: right;
+  }
+  input[type="password"].inputPass::-webkit-input-placeholder {
+    color: #252525;
+    font-size: 1.25vw;
+    text-align: right;
+  }
+  input[type="password"].inputPass::-moz-placeholder {
+    color: #252525;
+    font-size: 1.25vw;
+    text-align: right;
+  }
+  /* enable absolute positioning */
+  .inner-addon {
+    position: relative;
+  }
+
+  /* style icon */
+  .inner-addon .fa {
+    position: absolute;
+    padding: 10px;
+    pointer-events: none;
+  }
+
+  /* align icon */
+  .left-addon .fa  { left:  0px;}
+  .right-addon .fa { right: 0px;}
+
+  /* add padding  */
+  .left-addon input  {
+    padding-left:  30px;
+  }
+  .right-addon input {
+    padding-right: 30px;
+  }
+  .fa{
+    font-size: 1.5vw;
+    color: #252525;
+    margin-top: 1.4%;
+    padding-left: 5%;
+  }
+
+  textarea:focus,
+  input[type="text"]:focus,
+  input[type="password"]:focus{
+    border-color: rgba(0,226,255, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0,226,255, 0.6);
+    outline: 0 none;
+  }
+  label.with-square-checkbox {
+    cursor: pointer;
+  }
+  label.with-square-checkbox span {
+    line-height: 24px;
+  }
+  label.with-square-checkbox span::before {
+    margin-right: 4px;
+    padding-left: 1px;
+    width: 21px;
+    height: 21px;
+    border: 2px solid $cyan;
+    display: inline-block;
+    line-height: 15px;
+    content: '';
+    float: left;
+  }
+  label.with-square-checkbox input[type="checkbox"] {
+    display: none;
+  }
+  label.with-square-checkbox input[type="checkbox"]:checked + span::before {
+    font-family: FontAwesome;
+    content: '\f00c';
+    color: $cyan;
+  }
+
+  li.check_part {
+    list-style-type: none;
+  }
+  .check_title{
+    color: #232323;
+    text-align: center;
+  }
+  .boxing_btn_login{
+    padding-right: 35%;
+    padding-left: 35%;
+  }
+  .login_button{
+    text-align: center;
+    font-size: 19px;
+    width: 110px;
+    color: white;
+    background-color: $cyan;
+    border-radius: 0;
+    box-shadow: 0 0 4px gray;
+  }
+  @media(max-width:600px){
+    .login_button{
+      font-size: 15px;
+    }
+    input[type="text"].inputNamel::-webkit-input-placeholder {
+      font-size: 11px;
+    }
+    input[type="text"].inputNamel::-moz-placeholder {
+      font-size: 11px;
+    }
+    input[type="password"].inputPass::-webkit-input-placeholder {
+      font-size: 11px;
+    }
+    input[type="password"].inputPass::-moz-placeholder {
+      font-size: 11px;
+    }
+    .login_button{
+      font-size: 16px;
+      width: 70px;
+    }
+  }
+  @media(max-width:767px){
+    .account_title{
+      font-size: 15px;
+    }
+    .check_title{
+      font-size: 10px;
+    }
+    .glyphicon{
+      margin-top: 3.5%;
+    }
+    .login_button{
+      font-size: 16px;
+      width: 70px;
+    }
+  }
+  @media(min-width:768px){
+    .account_title{
+      font-size: 18px;
+    }
+    .check_title{
+      font-size: 13px;
+    }
+    .login_button{
+      font-size: 17px;
+      width: 80px;
+    }
+  }
+  @media(min-width:992px){
+    .account_title{
+      font-size: 21px;
+    }
+    .check_title{
+      font-size: 15px;
+    }
+    .login_button{
+      font-size: 17px;
+      width: 90px;
+    }
+  }
+  @media(min-width:1200px){
+    .account_title{
+      font-size: 22px;
+    }
+    .check_title{
+      font-size: 16px;
+    }
+    .login_button{
+      font-size: 18px;
+      width: 100px;
+    }
+  }
+  .edges{
+    border: 3px solid $cyan;
+    box-shadow: 0 0 4px $cyan;
+    background-color: white;
+    padding-bottom: 60px;
+    margin-top: 74px;
+  }
+}
+
+
