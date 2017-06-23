@@ -16,6 +16,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('Resources/css/Font/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Resources/css/Font/fontiran.css') }}">
+    <link rel="stylesheet" href="{{ asset('Resources/css/wowAnimation/animate.css') }}">
 </head>
 <body>
 
@@ -63,18 +64,18 @@
                             <a class="nav-link" href="#contactDown">تماس با ما</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0 pl-lg-5 ml-lg-4">
-                        <a href="{{ $info->ticket_link }}"><button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="button">تهیه بلیط</button></a>
+                    <form class="form-inline my-2 my-lg-0 pl-lg-5 ml-lg-4 text-center">
+                        <a href="{{ $info->ticket_link }}" class="text-center" id="login_link"><button class="btn btn-primary my-2 my-sm-0 px-3 loginButton" type="button">تهیه بلیط</button></a>
                     </form>
                 </div>
             </nav>
         </div>
         <div class="container">
             <br><br>
-            <h3 class="text-center subjectConfH2">۱۵ شهریور ۱۳۹۶</h3>
+            <h3 class="text-center subjectConfH2 wow fadeInDown">۱۵ شهریور ۱۳۹۶</h3>
         </div>
         <div class="container mt-4">
-            <h2 class="text-center subjectConfH1">همایش بزرگ از ایده تا اجرا</h2>
+            <h2 class="text-center subjectConfH1 wow fadeInDown">همایش بزرگ از ایده تا اجرا</h2>
         </div>
         <div class="container mt-5 clockBox">
             <div class="row justify-content-center">
@@ -141,8 +142,12 @@
 
             <div class="row">
                 <div class="col-12 mt-3 px-sm-0" id="aboutEventDown">
-                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary my-1">تهیه بلیط</button></a>
-                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success mr-lg-5 my-1">اطلاعات بیشتر</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary my-1
+                     button button--ujarak button--ujarak--2 button--border-thin button--text-thick
+                     ">تهیه بلیط</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success mr-lg-5 my-1
+                     button button--ujarak button--border-thin button--text-thick
+                    ">اطلاعات بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -176,10 +181,14 @@
         <div class="col-3">
             <div class="row  justify-content-center">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1">
-                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary">تهیه بلیط</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary
+                      button button--ujarak button--ujarak--4 button--border-thin button--text-thick
+                    ">تهیه بلیط</button></a>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-6 py-1" id="presentDown">
-                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success">اطلاعات بیشتر</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-outline-success
+                    button button--ujarak button--border-thin button--text-thick
+                   ">اطلاعات بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -217,7 +226,9 @@
                     <p>همایش بزرگ از ایده تا اجرا دانشکده فنی شرق گیلان</p>
                 </div>
                 <div class="col-lg-4 col-sm-12 pr-lg-5 pt-lg-0 pt-sm-3">
-                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary mr-lg-5">تهیه بلیط</button></a>
+                    <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary mr-lg-5
+                        button button--ujarak button--ujarak--2 button--border-thin button--text-thick
+                    ">تهیه بلیط</button></a>
                 </div>
             </div>
         </div>
@@ -282,7 +293,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-4 mt-5 text-center" id="supporterDown">
-                    <a href="{{ route('posts.all') }}"><button type="button" class="btn btn-primary">مشاهده بیشتر</button></a>
+                    <a href="{{ route('posts.all') }}"><button type="button" class="btn btn-primary
+                     button button--ujarak button--ujarak--3 button--border-thin button--text-thick
+                    ">مشاهده بیشتر</button></a>
                 </div>
             </div>
         </div>
@@ -404,7 +417,9 @@
 <script src="{{ asset('Resources/js/Jquery/jquery-2.2.4.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/tether.min.js') }}"></script>
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
+<script src="{{ asset('Resources/js/wowJs/wow.min.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
+<script src=""></script>
 <script>
     function myMap() {
         let myCenter = new google.maps.LatLng({{ $info->latitude }} + 0, {{ $info->longitude }} + 0);
@@ -420,6 +435,9 @@
             map: map
         });
     }
+</script>
+<script>
+    new WOW().init();
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJXj14jwwsgwA1DeIRMY5jBiRwT_byxVs&callback=myMap"></script>
 </body>

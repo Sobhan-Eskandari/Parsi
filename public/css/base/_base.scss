@@ -5,7 +5,16 @@ body {
 h1, h2, h3, h4, h5, h6, input, textarea, button {
   font-family: IRANSans !important;
 }
-
+@media only screen and (min-width: 992px) {
+  #backScrollColor{
+    background-color: transparent;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #backScrollColor{
+    background-color: #333 !important;
+  }
+}
 header {
   background-image: url("../../images/header-black.png");
   background-repeat: no-repeat;
@@ -14,6 +23,7 @@ header {
   width: 100%;
   height: 100%;
 }
+
 
 .mainConferencesNavbar {
   .navbar-light .navbar-nav .nav-link {
@@ -24,7 +34,7 @@ header {
     font-size: 16px;
   }
   .navbar-light .navbar-nav .nav-link:hover {
-    color: $cyan;
+    color: $green;
   }
   @media only screen and (max-width: 1250px) {
     .navbar-light .navbar-nav .nav-link {
@@ -56,10 +66,13 @@ header {
   }
   .loginButton, .loginButton:focus, .loginButton:hover {
     border-radius: 9px;
-    background-color: $cyan;
-    border: 1px solid $cyan;
+    background-color: $green;
+    border: 1px solid $green;
     box-shadow: 0 0 2px transparent;
     cursor: pointer;
+  }
+  a#login_link{
+    width: 100%;
   }
 }
 
@@ -149,16 +162,7 @@ hr {
     font-family: IRANSans;
   }
 }
-@media only screen and (min-width: 992px) {
-  #backScrollColor{
-    background-color: transparent;
-  }
-}
-@media only screen and (max-width: 991px) {
-  #backScrollColor{
-    background-color: #333;
-  }
-}
+
 
 /* ============[ about conf ]=========== */
 .aboutConf {
@@ -176,6 +180,9 @@ hr {
     width: 125px;
     text-align: center;
   }
+  .btn-primary{
+    color: white;
+  }
   .btn-primary, .btn-primary:focus {
     background-color: $green;
     border: 1px solid $green;
@@ -183,9 +190,16 @@ hr {
     cursor: pointer;
     border-radius: 8px;
   }
-  .btn-outline-success, .btn-outline-success:hover, .btn-outline-success:focus {
+  .btn-outline-success{
     border: 1px solid $green;
     color: $green;
+    box-shadow: 0 0 2px transparent;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .btn-outline-success:hover, .btn-outline-success:focus{
+    border: 1px solid $green;
     box-shadow: 0 0 2px transparent;
     background-color: white;
     cursor: pointer;
@@ -196,7 +210,7 @@ hr {
 /* ============[ about conf(black) ]=========== */
 .blackBackAboutConf {
   background-color: $darker;
-  z-index: -1;
+  z-index: 0;
   p {
     line-height: 30px;
     font-weight: 500;
@@ -215,6 +229,10 @@ hr {
     box-shadow: 0 0 2px transparent;
     cursor: pointer;
     border-radius: 8px;
+    color: white;
+  }
+  .btn-primary:hover{
+    color: white;
   }
   .btn-outline-success, .btn-outline-success:hover, .btn-outline-success:focus {
     border: 1px solid $green;
@@ -229,7 +247,7 @@ hr {
 /* ============[ mack book ]=========== */
 .mackBookImageBox {
   margin-bottom: -9.5%;
-  z-index: 0;
+  z-index: 1;
 }
 
 /* ============[ present ]=========== */
@@ -292,6 +310,7 @@ hr {
     width: 105px;
     text-align: center;
     margin-top: -2%;
+    color: white;
   }
 }
 
@@ -351,6 +370,7 @@ hr {
     text-align: center;
     padding-top: 14px;
     padding-bottom: 14px;
+    color: white;
   }
 }
 
@@ -437,3 +457,4 @@ hr {
     word-spacing: 2px;
   }
 }
+

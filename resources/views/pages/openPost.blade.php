@@ -19,7 +19,7 @@
         <br>
         <div class="row justify-content-center mt-3">
             <div class="col-lg-6 col-sm-8">
-                <div class="row justify-content-between px-0">
+                <div class="row justify-content-between pr-1 pl-2">
                     <div class="col px-3">
                         <h5 class="text-right">{{ $post->title }}</h5>
                     </div>
@@ -44,19 +44,19 @@
         <br>
         <div class="row justify-content-center mt-3">
             <div class="col-lg-6 col-sm-8">
-                <div class="row justify-content-between px-0">
+                <div class="row justify-content-between pr-1 pl-2">
 
                     <div class="col px-3">
                         <div class="row justify-content-start">
-                            <div class="col-2 px-0">
+                            <div class="col-2 px-0 text-left">
                                 <a href="http://www.facebook.com/sharer.php?u=http://parsi.dev/blog/{{ $post->id }}"><img src="{{ asset('images/facebook.png') }}"
                                                 alt="در حال بارگذاری" width="40px" height="40px" class="img-fluid"></a>
                             </div>
-                            <div class="col-2 px-0">
+                            <div class="col-2 px-0 text-center">
                                 <a href="https://telegram.me/share/url?url=http://parsi.dev/blog/{{ $post->id }}"><img src="{{ asset('images/telegram.png') }}"
                                                                                                                    alt="در حال بارگذاری" width="40px" height="40px" class="img-fluid"></a>
                             </div>
-                            <div class="col-2 px-0">
+                            <div class="col-2 px-0 text-right">
                                 <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://parsi.dev/blog/{{ $post->id }}"><img src="{{ asset('images/linkedin.png') }}"
                                                 alt="در حال بارگذاری" width="40px" height="40px" class="img-fluid"></a>
                             </div>

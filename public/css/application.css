@@ -8,6 +8,12 @@ body {
 h1, h2, h3, h4, h5, h6, input, textarea, button {
   font-family: IRANSans !important; }
 
+@media only screen and (min-width: 992px) {
+  #backScrollColor {
+    background-color: transparent; } }
+@media only screen and (max-width: 991px) {
+  #backScrollColor {
+    background-color: #333 !important; } }
 header {
   background-image: url("../../images/header-black.png");
   background-repeat: no-repeat;
@@ -23,7 +29,7 @@ header {
   padding-left: 18px;
   font-size: 16px; }
 .mainConferencesNavbar .navbar-light .navbar-nav .nav-link:hover {
-  color: #00E2FF; }
+  color: #46B594; }
 @media only screen and (max-width: 1250px) {
   .mainConferencesNavbar .navbar-light .navbar-nav .nav-link {
     padding-right: 8px;
@@ -47,10 +53,12 @@ header {
   color: white; }
 .mainConferencesNavbar .loginButton, .mainConferencesNavbar .loginButton:focus, .mainConferencesNavbar .loginButton:hover {
   border-radius: 9px;
-  background-color: #00E2FF;
-  border: 1px solid #00E2FF;
+  background-color: #46B594;
+  border: 1px solid #46B594;
   box-shadow: 0 0 2px transparent;
   cursor: pointer; }
+.mainConferencesNavbar a#login_link {
+  width: 100%; }
 
 .subjectConfH2, .subjectConfH1, .header_address {
   color: white;
@@ -118,12 +126,6 @@ hr {
     font-weight: 400;
     font-family: IRANSans; }
 
-@media only screen and (min-width: 992px) {
-  #backScrollColor {
-    background-color: transparent; } }
-@media only screen and (max-width: 991px) {
-  #backScrollColor {
-    background-color: #333; } }
 /* ============[ about conf ]=========== */
 .aboutConf h5 {
   padding-bottom: 10px;
@@ -136,15 +138,23 @@ hr {
 .aboutConf .btn {
   width: 125px;
   text-align: center; }
+.aboutConf .btn-primary {
+  color: white; }
 .aboutConf .btn-primary, .aboutConf .btn-primary:focus {
   background-color: #46B594;
   border: 1px solid #46B594;
   box-shadow: 0 0 2px transparent;
   cursor: pointer;
   border-radius: 8px; }
-.aboutConf .btn-outline-success, .aboutConf .btn-outline-success:hover, .aboutConf .btn-outline-success:focus {
+.aboutConf .btn-outline-success {
   border: 1px solid #46B594;
   color: #46B594;
+  box-shadow: 0 0 2px transparent;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 8px; }
+.aboutConf .btn-outline-success:hover, .aboutConf .btn-outline-success:focus {
+  border: 1px solid #46B594;
   box-shadow: 0 0 2px transparent;
   background-color: white;
   cursor: pointer;
@@ -153,7 +163,7 @@ hr {
 /* ============[ about conf(black) ]=========== */
 .blackBackAboutConf {
   background-color: #232323;
-  z-index: -1; }
+  z-index: 0; }
   .blackBackAboutConf p {
     line-height: 30px;
     font-weight: 500;
@@ -169,7 +179,10 @@ hr {
     border: 1px solid #46B594;
     box-shadow: 0 0 2px transparent;
     cursor: pointer;
-    border-radius: 8px; }
+    border-radius: 8px;
+    color: white; }
+  .blackBackAboutConf .btn-primary:hover {
+    color: white; }
   .blackBackAboutConf .btn-outline-success, .blackBackAboutConf .btn-outline-success:hover, .blackBackAboutConf .btn-outline-success:focus {
     border: 1px solid #46B594;
     color: white;
@@ -181,7 +194,7 @@ hr {
 /* ============[ mack book ]=========== */
 .mackBookImageBox {
   margin-bottom: -9.5%;
-  z-index: 0; }
+  z-index: 1; }
 
 /* ============[ present ]=========== */
 .presentBox hr {
@@ -229,7 +242,8 @@ hr {
     border-radius: 8px;
     width: 105px;
     text-align: center;
-    margin-top: -2%; }
+    margin-top: -2%;
+    color: white; }
 
 /* ============[ speakers ]=========== */
 .speakerConf hr {
@@ -273,7 +287,8 @@ hr {
   width: 125px;
   text-align: center;
   padding-top: 14px;
-  padding-bottom: 14px; }
+  padding-bottom: 14px;
+  color: white; }
 
 /* ============[ latest news ]=========== */
 .supportersBox hr {
@@ -604,5 +619,92 @@ figure {
   font-weight: 400; }
 .javaComponent img {
   border-radius: 10px; }
+.javaComponent .card {
+  background-color: transparent;
+  border: 1px solid transparent; }
+
+/* Common button styles */
+.button {
+  border: none;
+  background: none;
+  color: inherit;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale; }
+
+.button:focus {
+  outline: none; }
+
+.button > span {
+  vertical-align: middle; }
+
+/* Ujarak */
+.button--ujarak {
+  -webkit-transition: border-color 0.4s, color 0.4s;
+  transition: border-color 0.4s, color 0.4s; }
+
+.button--ujarak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #46B594;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale3d(0.7, 1, 1);
+  transform: scale3d(0.7, 1, 1);
+  -webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+  transition: transform 0.4s, opacity 0.4s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  border-radius: 6px; }
+
+.button--ujarak.button--round-s::before {
+  border-radius: 2px; }
+
+.button--ujarak,
+.button--ujarak::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1); }
+
+.button--ujarak:hover {
+  color: #fff;
+  border-color: #46B594; }
+
+.button-:hover {
+  color: white; }
+
+.button--ujarak:hover::before {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.button--border-thin {
+  border: 1px solid; }
+
+.button--ujarak--2::before {
+  background: white; }
+
+.button--ujarak--2:hover {
+  color: #46B594;
+  border-color: #46B594; }
+
+.button--ujarak--4::before {
+  background: #232323; }
+
+.button--ujarak--4:hover {
+  color: #46B594;
+  border-color: #46B594; }
+
+.button--ujarak--3::before {
+  background: white; }
+
+.button--ujarak--3:hover {
+  color: #4990E2;
+  border-color: #4990E2; }
 
 /*# sourceMappingURL=application.css.map */
