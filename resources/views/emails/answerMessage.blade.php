@@ -4,7 +4,7 @@
 
 {{ $message['message'] }}
 
-@component('mail::button', ['url' => 'http://parsi.dev/'])
+@component('mail::button', ['url' => 'http://tabtek.ir/'])
 بازگشت به وبسایت
 @endcomponent
 

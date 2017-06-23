@@ -64,5 +64,5 @@
 @endsection
 
 @section('about_us_active')
-    style="color: #00E2FF"
+    style="color: #46B594"
 @endsection

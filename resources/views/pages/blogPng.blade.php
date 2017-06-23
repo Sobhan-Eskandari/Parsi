@@ -43,5 +43,5 @@
 @endsection
 
 @section('blog_active')
-    style="color: #00E2FF"
+    style="color: #46B594"
 @endsection
