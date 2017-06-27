@@ -133,7 +133,7 @@ hr {
   width: 17%; }
 .aboutConf p {
   line-height: 30px;
-  font-weight: 500;
+  font-weight: 400;
   word-spacing: 2.5px; }
 .aboutConf .btn {
   width: 125px;
@@ -166,7 +166,7 @@ hr {
   z-index: 0; }
   .blackBackAboutConf p {
     line-height: 30px;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     word-spacing: 2.5px;
     padding-top: 7%; }
@@ -229,8 +229,8 @@ hr {
   height: 100%; }
 
 .creativeExperience {
-  padding-top: 7%;
-  padding-bottom: 6%; }
+  padding-top: 4%;
+  padding-bottom: 3%; }
   .creativeExperience h4, .creativeExperience p {
     color: white;
     word-spacing: 3px; }
@@ -322,7 +322,7 @@ hr {
   .contactWithUs .btn-primary, .contactWithUs .btn-primary:focus {
     background-color: white;
     border: 1px solid #46B594;
-    box-shadow: 0 0 2px transparent;
+    box-shadow: 0 0 3px gray;
     cursor: pointer;
     border-radius: 8px;
     text-align: center;
@@ -360,8 +360,10 @@ hr {
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 300px;
-  margin-top: 75px; }
+  height: 300px; }
+
+.second-header-downer {
+  margin-top: 74.5px; }
 
 .third-header {
   width: 100%;
@@ -573,8 +575,8 @@ hr {
   border-radius: 100px; }
 .speakerConf .job {
   color: #B2B2B2;
-  font-weight: 400;
-  font-size: 18px; }
+  font-weight: 300;
+  font-size: 17px; }
 
 .tooltip > .tooltip-inner {
   background-color: #232323;

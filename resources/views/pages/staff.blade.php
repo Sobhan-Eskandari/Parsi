@@ -64,9 +64,13 @@
                         @endcomponent
                     @endforeach
                     </tbody>
-                    {{ $crews->links() }}
                 </table>
 
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-xs-10 pull-right pagination">
+                {{ $crews->links() }}
             </div>
         </div>
 

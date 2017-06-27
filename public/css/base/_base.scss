@@ -173,7 +173,7 @@ hr {
   }
   p {
     line-height: 30px;
-    font-weight: 500;
+    font-weight: 400;
     word-spacing: 2.5px;
   }
   .btn {
@@ -213,7 +213,7 @@ hr {
   z-index: 0;
   p {
     line-height: 30px;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
     word-spacing: 2.5px;
     padding-top: 7%;
@@ -295,8 +295,8 @@ hr {
 }
 
 .creativeExperience {
-  padding-top: 7%;
-  padding-bottom: 6%;
+  padding-top: 4%;
+  padding-bottom: 3%;
   h4, p {
     color: white;
     word-spacing: 3px;
@@ -417,7 +417,7 @@ hr {
   .btn-primary, .btn-primary:focus {
     background-color: white;
     border: 1px solid $green;
-    box-shadow: 0 0 2px transparent;
+    box-shadow: 0 0 3px gray;
     cursor: pointer;
     border-radius: 8px;
     text-align: center;

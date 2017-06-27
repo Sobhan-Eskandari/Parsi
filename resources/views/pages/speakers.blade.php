@@ -88,9 +88,12 @@
                         @endcomponent
                     @endforeach
                     </tbody>
-                    {{ $lecturers->links() }}
                 </table>
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-xs-10 pull-right pagination">
+                {{ $lecturers->links() }}
             </div>
         </div>
 

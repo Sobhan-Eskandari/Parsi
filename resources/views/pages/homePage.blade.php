@@ -75,7 +75,7 @@
             <h3 class="text-center subjectConfH2 wow fadeInDown">۱۵ شهریور ۱۳۹۶</h3>
         </div>
         <div class="container mt-4">
-            <h2 class="text-center subjectConfH1 wow fadeInDown">همایش بزرگ از ایده تا اجرا</h2>
+            <h2 class="text-center subjectConfH1 wow fadeInDown">همایش بزرگ توسعه با طعم کارآفرینی(تب طِک)</h2>
         </div>
         <div class="container mt-5 clockBox">
             <div class="row justify-content-center">
@@ -223,7 +223,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-8  col-sm-12">
-                    <p>همایش بزرگ از ایده تا اجرا دانشکده فنی شرق گیلان</p>
+                    <p>همایش بزرگ توسعه با طعم کارآفرینی(تب طِک) دانشکده فنی شرق گیلان</p>
                 </div>
                 <div class="col-lg-4 col-sm-12 pr-lg-5 pt-lg-0 pt-sm-3">
                     <a href="{{ $info->ticket_link }}"><button type="button" class="btn btn-primary mr-lg-5
@@ -395,7 +395,7 @@
 <div id="map"></div>
 {{--==========[ footer ]========= --}}
 <div class="container-fluid footer pt-5 pb-4">
-<h5 class="text-center">همایش بزرگ از ایده تا اجرا</h5>
+<h5 class="text-center">همایش بزرگ توسعه با طعم کارآفرینی(تب طِک)</h5>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center mt-4">
@@ -419,7 +419,7 @@
 <script src="{{ asset('Resources/js/Bootstrap/bootstrap.min.js') }}"></script>
 <script src="{{ asset('Resources/js/wowJs/wow.min.js') }}"></script>
 <script src="{{ asset('js/public.js') }}"></script>
-<script src=""></script>
+<script src="{{ asset('js/smoothScroll.js') }}"></script>
 <script>
     function myMap() {
         let myCenter = new google.maps.LatLng({{ $info->latitude }} + 0, {{ $info->longitude }} + 0);

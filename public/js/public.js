@@ -58,4 +58,3 @@ function initializeClock(id, endtime) {
 let deadline = 'Wed Sep 06 2017 14:00:00 GMT+0430 (Iran Daylight Time)';
 
 initializeClock('clockdiv', deadline);
-

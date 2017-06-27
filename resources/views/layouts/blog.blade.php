@@ -76,7 +76,7 @@
 
 {{--==========[ footer ]========= --}}
 <div class="container-fluid footer pt-5 pb-4">
-    <h5 class="text-center">همایش بزرگ از ایده تا اجرا</h5>
+    <h5 class="text-center">همایش بزرگ توسعه با طعم کارآفرینی(تب طِک)</h5>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-4 text-center mt-4">

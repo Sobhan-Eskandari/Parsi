@@ -17,6 +17,11 @@ html {
   overflow-y: hidden;
 }
 
+input{
+  border-radius: 0 !important;
+  height: 40px !important;
+}
+
 
 .custom-file-upload-hidden {
   display: none;
@@ -1593,7 +1598,7 @@ scroll bar
     align-content: center;
     vertical-align: middle;
   }
-  .table {
+  .pagination {
     margin-bottom: 250px;
   }
 }

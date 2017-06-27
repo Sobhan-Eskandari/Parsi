@@ -10,16 +10,16 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-sm-8">
                 @if(strlen($post->image) === 0)
-                    <img src="{{ asset('images/java.jpg') }}" class="img-fluid" width="674.5px" alt="{{ $post->title }}">
+                    <img src="{{ asset('images/java.jpg') }}" class="img-fluid"  alt="{{ $post->title }}">
                 @else
-                    <img src="{{ asset('images' . '/' . $post->image) }}" class="img-fluid" width="674.5px" alt="{{ $post->title }}">
+                    <img src="{{ asset('images' . '/' . $post->image) }}" class="img-fluid" alt="{{ $post->title }}">
                 @endif
             </div>
         </div>
         <br>
         <div class="row justify-content-center mt-3">
             <div class="col-lg-6 col-sm-8">
-                <div class="row justify-content-between pr-1 pl-2">
+                <div class="row justify-content-between px-2">
                     <div class="col px-3">
                         <h5 class="text-right">{{ $post->title }}</h5>
                     </div>
@@ -30,9 +30,9 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-6 col-sm-8">
-                <p class="mt-4" id="toShowText"></p>
-                <p id="tohideText" hidden>{{ $post->body }}</p>
+            <div class="col-lg-6 col-sm-8  px-2">
+                <p class="mt-4 px-3" id="toShowText"></p>
+                <p id="tohideText" hidden class="px-3">{{ $post->body }}</p>
                 <script>
                     $( document ).ready(function() {
                         $('#toShowText').html($('#tohideText').text());
@@ -44,7 +44,7 @@
         <br>
         <div class="row justify-content-center mt-3">
             <div class="col-lg-6 col-sm-8">
-                <div class="row justify-content-between pr-1 pl-2">
+                <div class="row justify-content-between px-2">
 
                     <div class="col px-3">
                         <div class="row justify-content-start">
