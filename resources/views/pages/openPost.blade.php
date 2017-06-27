@@ -10,9 +10,9 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-sm-8">
                 @if(strlen($post->image) === 0)
-                    <img src="{{ asset('images/java.jpg') }}" class="img-fluid"  alt="{{ $post->title }}">
+                    <img src="{{ asset('images/java.jpg') }}" class="img-fluid"  alt="{{ $post->title }}" width="100%">
                 @else
-                    <img src="{{ asset('images' . '/' . $post->image) }}" class="img-fluid" alt="{{ $post->title }}">
+                    <img src="{{ asset('images' . '/' . $post->image) }}" class="img-fluid" alt="{{ $post->title }}" width="100%">
                 @endif
             </div>
         </div>
@@ -24,7 +24,7 @@
                         <h5 class="text-right">{{ $post->title }}</h5>
                     </div>
                     <div class="col px-3">
-                        <h6 class="text-left">نوشته شده در {{ $post->created_at->format('y/m/d') }}</h6>
+                        <h6 class="text-left pl-3">نوشته شده در {{ $post->created_at->format('y/m/d') }}</h6>
                     </div>
                 </div>
             </div>
@@ -63,7 +63,7 @@
                         </div>
                     </div>
                     <div class="col px-3">
-                        <a href="{{ route('posts.all') }}" class="link"><p class="text-left">بازگشت به بلاگ <i class="fa fa-long-arrow-left pt-2"
+                        <a href="{{ route('posts.all') }}" class="link"><p class="text-left pl-3">بازگشت به بلاگ <i class="fa fa-long-arrow-left pt-2"
                                                                     aria-hidden="true"></i></p></a>
                     </div>
                 </div>
