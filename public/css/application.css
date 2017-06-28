@@ -355,15 +355,12 @@ hr {
     word-spacing: 2px; }
 
 .second-header {
-  background-image: url("../../images/blog_cover.png");
+  background-image: url("../../images/blog_cover .png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 300px; }
-
-.second-header-downer {
-  margin-top: -2px; }
+  height: 359px; }
 
 .third-header {
   width: 100%;
@@ -372,7 +369,7 @@ hr {
 
 .main-title-layout {
   color: white;
-  padding-top: 120px; }
+  padding-top: 205px; }
 
 .blogColor {
   background-color: #333; }

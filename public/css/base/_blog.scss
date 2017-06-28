@@ -1,22 +1,21 @@
 .second-header {
-  background-image: url("../../images/blog_cover.png");
+  background-image: url("../../images/blog_cover .png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   width: 100%;
-  height: 300px;
+  height: 359px;
 }
-.second-header-downer{
-  margin-top: -2px;
-}
-.third-header{
+
+.third-header {
   width: 100%;
   height: 100%;
   margin-top: 2px;
 }
-.main-title-layout{
-color: white;
-  padding-top: 120px;
+
+.main-title-layout {
+  color: white;
+  padding-top: 205px;
 }
 
 .blogColor {
@@ -41,7 +40,7 @@ color: white;
 }
 
 .blogPngBox {
-  a{
+  a {
     text-decoration: none;
   }
   a {
@@ -69,34 +68,37 @@ color: white;
     border-bottom-right-radius: 10px;
   }
 }
-.aboutUsBlogBox{
-  .confTitleBlog{
+
+.aboutUsBlogBox {
+  .confTitleBlog {
     font-size: 21px;
   }
-  .underline_member{
+  .underline_member {
     border-top: 2px solid $green;
     width: 20%;
   }
 }
-.aboutUsBlogBox_backColor{
+
+.aboutUsBlogBox_backColor {
   background-color: #eee;
 }
+
 /* ============[ login ]=========== */
-.login{
-  .account_title{
+.login {
+  .account_title {
     color: #232323;
   }
-  .input_boxing{
+  .input_boxing {
     padding-right: 15%;
     padding-left: 15%;
   }
-  #inputNamel{
+  #inputNamel {
     border-radius: 0;
     height: auto;
     padding-top: 5%;
     padding-bottom: 5%;
   }
-  #inputPass{
+  #inputPass {
     border-radius: 0;
     height: auto;
     padding-top: 5%;
@@ -135,17 +137,21 @@ color: white;
   }
 
   /* align icon */
-  .left-addon .fa  { left:  0px;}
-  .right-addon .fa { right: 0px;}
+  .left-addon .fa {
+    left: 0px;
+  }
+  .right-addon .fa {
+    right: 0px;
+  }
 
   /* add padding  */
-  .left-addon input  {
-    padding-left:  30px;
+  .left-addon input {
+    padding-left: 30px;
   }
   .right-addon input {
     padding-right: 30px;
   }
-  .fa{
+  .fa {
     font-size: 1.5vw;
     color: #252525;
     margin-top: 1.4%;
@@ -154,9 +160,9 @@ color: white;
 
   textarea:focus,
   input[type="text"]:focus,
-  input[type="password"]:focus{
-    border-color: rgba(0,226,255, 0.8);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0,226,255, 0.6);
+  input[type="password"]:focus {
+    border-color: rgba(0, 226, 255, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(0, 226, 255, 0.6);
     outline: 0 none;
   }
   label.with-square-checkbox {
@@ -188,15 +194,15 @@ color: white;
   li.check_part {
     list-style-type: none;
   }
-  .check_title{
+  .check_title {
     color: #232323;
     text-align: center;
   }
-  .boxing_btn_login{
+  .boxing_btn_login {
     padding-right: 35%;
     padding-left: 35%;
   }
-  .login_button{
+  .login_button {
     text-align: center;
     font-size: 19px;
     width: 110px;
@@ -205,8 +211,8 @@ color: white;
     border-radius: 0;
     box-shadow: 0 0 4px gray;
   }
-  @media(max-width:600px){
-    .login_button{
+  @media(max-width: 600px) {
+    .login_button {
       font-size: 15px;
     }
     input[type="text"].inputNamel::-webkit-input-placeholder {
@@ -221,63 +227,63 @@ color: white;
     input[type="password"].inputPass::-moz-placeholder {
       font-size: 11px;
     }
-    .login_button{
+    .login_button {
       font-size: 16px;
       width: 70px;
     }
   }
-  @media(max-width:767px){
-    .account_title{
+  @media(max-width: 767px) {
+    .account_title {
       font-size: 15px;
     }
-    .check_title{
+    .check_title {
       font-size: 10px;
     }
-    .glyphicon{
+    .glyphicon {
       margin-top: 3.5%;
     }
-    .login_button{
+    .login_button {
       font-size: 16px;
       width: 70px;
     }
   }
-  @media(min-width:768px){
-    .account_title{
+  @media(min-width: 768px) {
+    .account_title {
       font-size: 18px;
     }
-    .check_title{
+    .check_title {
       font-size: 13px;
     }
-    .login_button{
+    .login_button {
       font-size: 17px;
       width: 80px;
     }
   }
-  @media(min-width:992px){
-    .account_title{
+  @media(min-width: 992px) {
+    .account_title {
       font-size: 21px;
     }
-    .check_title{
+    .check_title {
       font-size: 15px;
     }
-    .login_button{
+    .login_button {
       font-size: 17px;
       width: 90px;
     }
   }
-  @media(min-width:1200px){
-    .account_title{
+  @media(min-width: 1200px) {
+    .account_title {
       font-size: 22px;
     }
-    .check_title{
+    .check_title {
       font-size: 16px;
     }
-    .login_button{
+    .login_button {
       font-size: 18px;
       width: 100px;
     }
   }
-  .edges{
+  .edges {
     border: 3px solid $cyan;
     box-shadow: 0 0 4px $cyan;
     background-color: white;

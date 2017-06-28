@@ -6,7 +6,6 @@
 
 @section('content')
     <div class="container-fluid px-0 second-header-downer">
-        <hr><hr><br>
         <div class="second-header">
             <h1 class="text-center main-title-layout pr-1">وبلاگ</h1>
         </div>
